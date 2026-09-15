@@ -1,5 +1,9 @@
 # Fork changes
 
+## Unreleased
+
+- Replace the M logo with an S for Sub2API in the README, frontend, and favicon. Keep the Apple Blue background and light blue accent.
+
 ## 0.2.5-ohmy.1 — 2026-09-15
 
 Based on [Sub2API v0.2.5](https://github.com/Wei-Shaw/sub2api/releases/tag/v0.2.5).
