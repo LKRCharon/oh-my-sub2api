@@ -1,3 +1,5 @@
+<!-- Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md. -->
+
 <template>
   <BaseDialog
     :show="show"
@@ -531,6 +533,6 @@ function apiModeBadgeClass(mode: APIMode): string {
   if (normalizeAPIMode(mode) === API_MODE_RESPONSES) {
     return 'bg-blue-100 text-blue-700 dark:bg-blue-500/15 dark:text-blue-300'
   }
-  return 'bg-emerald-100 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300'
+  return 'bg-primary-100 text-primary-700 dark:bg-primary-500/15 dark:text-primary-300'
 }
 </script>

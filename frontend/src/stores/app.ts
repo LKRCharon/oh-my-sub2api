@@ -1,3 +1,5 @@
+// Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md.
+
 /**
  * Application State Store
  * Manages global UI state including sidebar, loading indicators, and toast notifications
@@ -7,6 +9,7 @@ import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 import type { Toast, ToastType, PublicSettings } from '@/types'
 import { i18n } from '@/i18n'
+import { clampSidebarWidth, readSidebarWidth } from '@/utils/sidebarWidth'
 import {
   checkUpdates as checkUpdatesAPI,
   type VersionInfo,
@@ -18,6 +21,7 @@ export const useAppStore = defineStore('app', () => {
   // ==================== State ====================
 
   const sidebarCollapsed = ref<boolean>(false)
+  const sidebarWidth = ref<number>(readSidebarWidth())
   const mobileOpen = ref<boolean>(false)
   const sidebarScrollTop = ref<number>(0)
   const loading = ref<boolean>(false)
@@ -26,7 +30,7 @@ export const useAppStore = defineStore('app', () => {
   // Public settings cache state
   const publicSettingsLoaded = ref<boolean>(false)
   const publicSettingsLoading = ref<boolean>(false)
-  const siteName = ref<string>('Sub2API')
+  const siteName = ref<string>('Oh My Sub2API')
   const siteLogo = ref<string>('')
   const siteVersion = ref<string>('')
   const contactInfo = ref<string>('')
@@ -69,6 +73,18 @@ export const useAppStore = defineStore('app', () => {
    */
   function setSidebarCollapsed(collapsed: boolean): void {
     sidebarCollapsed.value = collapsed
+  }
+
+  /**
+   * Set sidebar width (for drag resize)
+   */
+  function setSidebarWidth(width: number): void {
+    sidebarWidth.value = clampSidebarWidth(width)
+    try {
+      localStorage.setItem('sidebarWidth', String(sidebarWidth.value))
+    } catch {
+      // Resizing remains available when browser storage is disabled or full.
+    }
   }
 
   /**
@@ -294,7 +310,7 @@ export const useAppStore = defineStore('app', () => {
       window.__APP_CONFIG__ = { ...config }
     }
     cachedPublicSettings.value = config
-    siteName.value = config.site_name || 'Sub2API'
+    siteName.value = config.site_name || 'Oh My Sub2API'
     siteLogo.value = config.site_logo || ''
     siteVersion.value = config.version || ''
     contactInfo.value = config.contact_info || ''
@@ -439,6 +455,7 @@ export const useAppStore = defineStore('app', () => {
   return {
     // State
     sidebarCollapsed,
+    sidebarWidth,
     mobileOpen,
     sidebarScrollTop,
     loading,
@@ -470,6 +487,7 @@ export const useAppStore = defineStore('app', () => {
     // Actions
     toggleSidebar,
     setSidebarCollapsed,
+    setSidebarWidth,
     toggleMobileSidebar,
     setMobileOpen,
     setLoading,

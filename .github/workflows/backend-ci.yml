@@ -8,6 +8,28 @@ permissions:
   contents: read
 
 jobs:
+  installer:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Check installer token handling
+        run: bash deploy/tests/install-github-token-test.sh
+
+  secrets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-go@v6
+        with:
+          go-version-file: backend/go.mod
+          cache-dependency-path: backend/go.sum
+      - name: Install Gitleaks
+        run: go install github.com/zricethezav/gitleaks/v8@v8.30.1
+      - name: Scan fork changes with redacted output
+        run: gitleaks git --redact=100 --log-opts=86f93c28ee34cc74b629dafb748bd5ac5ca8c5ea..HEAD
+
   shell:
     runs-on: macos-15
     steps:

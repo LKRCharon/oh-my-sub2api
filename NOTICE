@@ -1,0 +1,23 @@
+Oh My Sub2API
+
+Based on Sub2API v0.2.5 (commit 86f93c28ee34cc74b629dafb748bd5ac5ca8c5ea).
+Upstream: https://github.com/Wei-Shaw/sub2api
+Copyright notices belonging to Wei-Shaw and the upstream contributors are retained.
+
+Fork modifications Copyright (C) 2026 LKRCharon and Oh My Sub2API contributors.
+Modified on 2026-09-15. See CHANGES.md and the Git history for the changes.
+Fork source: https://github.com/LKRCharon/oh-my-sub2api
+
+This fork is distributed under GNU LGPL version 3 or, at your option, any
+later version, as declared by the upstream README. LICENSE contains LGPLv3;
+COPYING contains GPLv3, whose terms are incorporated by LGPLv3.
+There is no warranty; see those licenses for the full terms.
+
+This is an unofficial fork. Neither the upstream project nor any API provider
+endorses this fork. The original upstream notices and disclaimers are preserved
+in README_UPSTREAM.md and README_UPSTREAM_CN.md. Those documents describe the
+upstream project and its sponsors, not sponsorship or endorsement of this fork.
+
+Release binaries and container images correspond to their version tag in the
+fork source repository. The complete corresponding source and build scripts
+are available in the source archive attached to the same GitHub release.

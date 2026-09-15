@@ -1,3 +1,5 @@
+<!-- Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md. -->
+
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -305,7 +307,7 @@ function getLoadBarClass(loadPct: number): string {
   if (loadPct >= 90) return 'bg-red-500 dark:bg-red-600'
   if (loadPct >= 70) return 'bg-orange-500 dark:bg-orange-600'
   if (loadPct >= 50) return 'bg-yellow-500 dark:bg-yellow-600'
-  return 'bg-green-500 dark:bg-green-600'
+  return 'bg-primary-500 dark:bg-primary-600'
 }
 
 function getLoadBarStyle(loadPct: number): string {
@@ -316,7 +318,7 @@ function getLoadTextClass(loadPct: number): string {
   if (loadPct >= 90) return 'text-red-600 dark:text-red-400'
   if (loadPct >= 70) return 'text-orange-600 dark:text-orange-400'
   if (loadPct >= 50) return 'text-yellow-600 dark:text-yellow-400'
-  return 'text-green-600 dark:text-green-400'
+  return 'text-primary-600 dark:text-primary-400'
 }
 
 function formatDuration(seconds: number): string {
@@ -482,7 +484,7 @@ watch(
                 />
               </svg>
               <span class="text-gray-600 dark:text-gray-300">
-                <span class="font-bold text-green-600 dark:text-green-400">{{ row.available_accounts }}</span
+                <span class="font-bold text-primary-600 dark:text-primary-400">{{ row.available_accounts }}</span
                 >/{{ row.total_accounts }}
               </span>
               <span class="text-gray-400 dark:text-gray-500">{{ row.availability_percentage }}%</span>
@@ -534,7 +536,7 @@ watch(
               <!-- 状态徽章 -->
               <span
                 v-if="row.is_available"
-                class="inline-flex items-center gap-1 rounded bg-green-100 px-1.5 py-0.5 text-[10px] font-medium text-green-700 dark:bg-green-900/30 dark:text-green-400"
+                class="inline-flex items-center gap-1 rounded bg-primary-100 px-1.5 py-0.5 text-[10px] font-medium text-primary-700 dark:bg-primary-900/30 dark:text-primary-400"
               >
                 <svg class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />

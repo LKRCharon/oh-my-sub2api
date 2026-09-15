@@ -1,3 +1,5 @@
+<!-- Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md. -->
+
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
 import { useMediaQuery } from '@vueuse/core'
@@ -157,7 +159,7 @@ function openErrorDetail(errorId: number | null | undefined) {
 
 const kindBadgeClass = (kind: string) => {
   if (kind === 'error') return 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-300'
-  return 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300'
+  return 'bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300'
 }
 </script>
 

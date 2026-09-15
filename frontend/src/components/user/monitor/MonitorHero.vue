@@ -1,3 +1,5 @@
+<!-- Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md. -->
+
 <template>
   <section class="py-3 md:py-4">
     <div class="flex items-center justify-end gap-3 flex-wrap">
@@ -96,7 +98,7 @@ const overallLabel = computed(() => t(`channelStatus.overall.${props.overallStat
 const overallChipClass = computed(() => {
   switch (props.overallStatus) {
     case 'operational':
-      return 'bg-emerald-100 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300'
+      return 'bg-primary-100 text-primary-700 dark:bg-primary-500/15 dark:text-primary-300'
     case 'degraded':
     default:
       return 'bg-amber-100 text-amber-700 dark:bg-amber-500/15 dark:text-amber-300'
@@ -106,7 +108,7 @@ const overallChipClass = computed(() => {
 const overallDotClass = computed(() => {
   switch (props.overallStatus) {
     case 'operational':
-      return 'bg-emerald-500 animate-pulse'
+      return 'bg-primary-500 animate-pulse'
     case 'degraded':
     default:
       return 'bg-amber-500 animate-pulse'

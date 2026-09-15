@@ -1,3 +1,5 @@
+// Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md.
+
 package service
 
 import (
@@ -291,7 +293,7 @@ func parseAuditLogRetentionDays(value string) int {
 func (s *SettingService) GetSiteName(ctx context.Context) string {
 	value, err := s.settingRepo.GetValue(ctx, SettingKeySiteName)
 	if err != nil || value == "" {
-		return "Sub2API"
+		return "Oh My Sub2API"
 	}
 	return value
 }

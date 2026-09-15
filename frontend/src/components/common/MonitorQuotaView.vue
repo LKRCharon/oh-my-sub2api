@@ -1,3 +1,5 @@
+<!-- Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md. -->
+
 <template>
   <div v-if="snapshot" class="space-y-1" data-testid="monitor-quota-view">
     <!-- 套餐等级徽章（如智谱 plan level / Claude 订阅档） -->
@@ -58,7 +60,7 @@ const props = defineProps<{
 
 const { t, te } = useI18n()
 
-type TierColor = 'indigo' | 'emerald' | 'purple' | 'amber'
+type TierColor = 'indigo' | 'primary' | 'purple' | 'amber'
 
 interface QuotaTierRow {
   key: string
@@ -102,7 +104,7 @@ function tierLabel(tier: MonitorQuotaTier): string {
 }
 
 // tier 配色按数组顺序轮转（UsageProgressBar 支持的色板）。
-const tierColors: TierColor[] = ['indigo', 'emerald', 'purple', 'amber']
+const tierColors: TierColor[] = ['indigo', 'primary', 'purple', 'amber']
 
 const tierRows = computed<QuotaTierRow[]>(() =>
   (props.snapshot?.tiers || []).map((tier, idx) => ({

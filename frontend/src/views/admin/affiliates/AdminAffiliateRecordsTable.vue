@@ -1,3 +1,5 @@
+<!-- Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md. -->
+
 <template>
   <AppLayout>
     <TablePageLayout>
@@ -362,7 +364,7 @@ const AmountText = defineComponent({
   setup(amountProps) {
     return () => h('span', {
       class: amountProps.strong
-        ? 'text-sm font-semibold text-emerald-600 dark:text-emerald-400'
+        ? 'text-sm font-semibold text-primary-600 dark:text-primary-400'
         : 'text-sm text-gray-900 dark:text-white',
     }, `$${formatAmount(amountProps.value)}`)
   },

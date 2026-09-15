@@ -1,3 +1,5 @@
+// Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md.
+
 import { i18n } from '@/i18n'
 import type { RouteLocationNormalizedLoaded } from 'vue-router'
 import type { CustomMenuItem } from '@/types'
@@ -8,7 +10,7 @@ import type { SiteBillingMode } from '@/utils/siteBillingMode'
  * 优先使用 titleKey 通过 i18n 翻译，fallback 到静态 routeTitle。
  */
 export function resolveDocumentTitle(routeTitle: unknown, siteName?: string, titleKey?: string): string {
-  const normalizedSiteName = typeof siteName === 'string' && siteName.trim() ? siteName.trim() : 'Sub2API'
+  const normalizedSiteName = typeof siteName === 'string' && siteName.trim() ? siteName.trim() : 'Oh My Sub2API'
 
   if (typeof titleKey === 'string' && titleKey.trim()) {
     const translated = i18n.global.t(titleKey)

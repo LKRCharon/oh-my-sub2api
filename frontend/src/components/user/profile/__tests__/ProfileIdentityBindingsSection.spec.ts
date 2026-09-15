@@ -1,3 +1,5 @@
+// Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md.
+
 import { mount } from '@vue/test-utils'
 import { createPinia, setActivePinia } from 'pinia'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
@@ -243,7 +245,7 @@ describe('ProfileIdentityBindingsSection', () => {
       invitation_code_enabled: false,
       turnstile_enabled: false,
       turnstile_site_key: '',
-      site_name: 'Sub2API',
+      site_name: 'Oh My Sub2API',
       site_logo: '',
       site_subtitle: '',
       api_base_url: '',

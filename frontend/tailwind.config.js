@@ -1,3 +1,5 @@
+// Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md.
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
@@ -5,47 +7,47 @@ export default {
   theme: {
     extend: {
       colors: {
-        // 主色调 - Teal/Cyan 青色系
+        // 主色调 - Apple System Blue
         primary: {
-          50: '#f0fdfa',
-          100: '#ccfbf1',
-          200: '#99f6e4',
-          300: '#5eead4',
-          400: '#2dd4bf',
-          500: '#14b8a6',
-          600: '#0d9488',
-          700: '#0f766e',
-          800: '#115e59',
-          900: '#134e4a',
-          950: '#042f2e'
+          50: '#f0f7ff',
+          100: '#e0efff',
+          200: '#b8dbff',
+          300: '#7abaff',
+          400: '#3d9dff',
+          500: '#007AFF',
+          600: '#0066d6',
+          700: '#0052ab',
+          800: '#004080',
+          900: '#002e5c',
+          950: '#001a3a'
         },
-        // 辅助色 - 深蓝灰
+        // 辅助色 - Apple Gray
         accent: {
-          50: '#f8fafc',
-          100: '#f1f5f9',
-          200: '#e2e8f0',
-          300: '#cbd5e1',
-          400: '#94a3b8',
-          500: '#64748b',
-          600: '#475569',
-          700: '#334155',
-          800: '#1e293b',
-          900: '#0f172a',
-          950: '#020617'
+          50: '#fbfbfd',
+          100: '#f2f2f7',
+          200: '#e5e5ea',
+          300: '#d1d1d6',
+          400: '#aeaeb2',
+          500: '#8e8e93',
+          600: '#636366',
+          700: '#48484a',
+          800: '#3a3a3c',
+          900: '#2c2c2e',
+          950: '#1c1c1e'
         },
-        // 深色模式背景
+        // 深色模式背景 - Apple Dark
         dark: {
-          50: '#f8fafc',
-          100: '#f1f5f9',
-          200: '#e2e8f0',
-          300: '#cbd5e1',
-          400: '#94a3b8',
-          500: '#64748b',
-          600: '#475569',
-          700: '#334155',
-          800: '#1e293b',
-          900: '#0f172a',
-          950: '#020617'
+          50: '#f2f2f7',
+          100: '#e5e5ea',
+          200: '#d1d1d6',
+          300: '#c7c7cc',
+          400: '#aeaeb2',
+          500: '#8e8e93',
+          600: '#636366',
+          700: '#48484a',
+          800: '#3a3a3c',
+          900: '#2c2c2e',
+          950: '#1c1c1e'
         }
       },
       fontFamily: {
@@ -67,20 +69,20 @@ export default {
       boxShadow: {
         glass: '0 8px 32px rgba(0, 0, 0, 0.08)',
         'glass-sm': '0 4px 16px rgba(0, 0, 0, 0.06)',
-        glow: '0 0 20px rgba(20, 184, 166, 0.25)',
-        'glow-lg': '0 0 40px rgba(20, 184, 166, 0.35)',
+        glow: '0 0 20px rgba(0, 122, 255, 0.2)',
+        'glow-lg': '0 0 40px rgba(0, 122, 255, 0.3)',
         card: '0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06)',
         'card-hover': '0 10px 40px rgba(0, 0, 0, 0.08)',
         'inner-glow': 'inset 0 1px 0 rgba(255, 255, 255, 0.1)'
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-primary': 'linear-gradient(135deg, #14b8a6 0%, #0d9488 100%)',
-        'gradient-dark': 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
+        'gradient-primary': 'linear-gradient(135deg, #007AFF 0%, #0066d6 100%)',
+        'gradient-dark': 'linear-gradient(135deg, #2c2c2e 0%, #1c1c1e 100%)',
         'gradient-glass':
           'linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)',
         'mesh-gradient':
-          'radial-gradient(at 40% 20%, rgba(20, 184, 166, 0.12) 0px, transparent 50%), radial-gradient(at 80% 0%, rgba(6, 182, 212, 0.08) 0px, transparent 50%), radial-gradient(at 0% 50%, rgba(20, 184, 166, 0.08) 0px, transparent 50%)'
+          'radial-gradient(at 40% 20%, rgba(0, 122, 255, 0.08) 0px, transparent 50%), radial-gradient(at 80% 0%, rgba(10, 132, 255, 0.06) 0px, transparent 50%), radial-gradient(at 0% 50%, rgba(0, 122, 255, 0.06) 0px, transparent 50%)'
       },
       animation: {
         'fade-in': 'fadeIn 0.3s ease-out',
@@ -118,8 +120,8 @@ export default {
           '100%': { backgroundPosition: '200% 0' }
         },
         glow: {
-          '0%': { boxShadow: '0 0 20px rgba(20, 184, 166, 0.25)' },
-          '100%': { boxShadow: '0 0 30px rgba(20, 184, 166, 0.4)' }
+          '0%': { boxShadow: '0 0 20px rgba(0, 122, 255, 0.2)' },
+          '100%': { boxShadow: '0 0 30px rgba(0, 122, 255, 0.35)' }
         }
       },
       backdropBlur: {

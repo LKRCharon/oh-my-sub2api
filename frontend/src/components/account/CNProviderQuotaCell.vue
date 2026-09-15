@@ -1,3 +1,5 @@
+<!-- Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md. -->
+
 <template>
   <div
     v-if="visible"
@@ -12,7 +14,7 @@
         :key="tier.window"
         data-test="cn-provider-quota-tier"
         :label="windowLabel(tier.window)"
-        :color="tier.window === 'weekly' ? 'emerald' : 'indigo'"
+        :color="tier.window === 'weekly' ? 'primary' : 'indigo'"
         :utilization="tier.used_percent"
         :resets-at="tier.reset_at"
       />

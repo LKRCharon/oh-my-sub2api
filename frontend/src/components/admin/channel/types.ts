@@ -1,3 +1,5 @@
+// Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md.
+
 import type { BillingMode, ChannelTimePricing, PricingInterval } from '@/api/admin/channels'
 
 type TranslateFn = (key: string, params?: Record<string, unknown>) => string
@@ -413,7 +415,7 @@ export function getPlatformTagClass(platform: string): string {
     case 'grok': return 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300'
     case 'kimi': return 'bg-pink-100 text-pink-700 dark:bg-pink-900/30 dark:text-pink-400'
     case 'zhipu': return 'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-400'
-    case 'deepseek': return 'bg-teal-100 text-teal-700 dark:bg-teal-900/30 dark:text-teal-400'
+    case 'deepseek': return 'bg-sky-100 text-sky-700 dark:bg-sky-900/30 dark:text-sky-400'
     default: return 'bg-gray-100 text-gray-700 dark:bg-gray-900/30 dark:text-gray-400'
   }
 }
@@ -428,7 +430,7 @@ export function getPlatformTextClass(platform: string): string {
     case 'grok': return 'text-slate-700 dark:text-slate-300'
     case 'kimi': return 'text-pink-700 dark:text-pink-400'
     case 'zhipu': return 'text-indigo-700 dark:text-indigo-400'
-    case 'deepseek': return 'text-teal-700 dark:text-teal-400'
+    case 'deepseek': return 'text-sky-700 dark:text-sky-400'
     default: return ''
   }
 }

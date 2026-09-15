@@ -1,3 +1,5 @@
+<!-- Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md. -->
+
 <template>
   <div
     v-if="state?.eligible"
@@ -17,7 +19,7 @@
       label="7d"
       :utilization="snapshot.data.seven_day.used_percent"
       :resets-at="snapshot.data.seven_day.reset_at"
-      color="emerald"
+      color="primary"
       data-testid="ollama-cloud-seven-day"
     />
     <div v-if="state.configured" class="flex items-center pt-0.5">

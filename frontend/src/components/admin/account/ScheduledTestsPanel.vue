@@ -1,3 +1,5 @@
+<!-- Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md. -->
+
 <template>
   <BaseDialog
     :show="show"
@@ -180,7 +182,7 @@
               <!-- Auto Recover Badge -->
               <span
                 v-if="plan.auto_recover"
-                class="inline-flex items-center rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-medium text-emerald-700 dark:bg-emerald-500/20 dark:text-emerald-400"
+                class="inline-flex items-center rounded-full bg-primary-100 px-2 py-0.5 text-xs font-medium text-primary-700 dark:bg-primary-500/20 dark:text-primary-400"
               >
                 {{ t('admin.scheduledTests.autoRecover') }}
               </span>
@@ -373,7 +375,7 @@
                       :class="[
                         'inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium',
                         result.status === 'success'
-                          ? 'bg-green-100 text-green-700 dark:bg-green-500/20 dark:text-green-400'
+                          ? 'bg-primary-100 text-primary-700 dark:bg-primary-500/20 dark:text-primary-400'
                           : result.status === 'running'
                             ? 'bg-blue-100 text-blue-700 dark:bg-blue-500/20 dark:text-blue-400'
                             : 'bg-red-100 text-red-700 dark:bg-red-500/20 dark:text-red-400'

@@ -1,3 +1,5 @@
+# Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md.
+
 # 本地杂项文档、测试数据和外部项目副本
 /docs-local/
 .codex
@@ -157,3 +159,21 @@ output/
 .vite/
 # 本地闭源插件开发目录及构建产物不进入 Sub2API 仓库
 /plugins/
+
+# Local credentials and runtime state
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+*.sqlite*
+*.db
+*.dump
+*.sql.gz
+/data/
+/deploy/data/
+/deploy/postgres_data/
+/deploy/redis_data/
+/auth.json
+/config.toml

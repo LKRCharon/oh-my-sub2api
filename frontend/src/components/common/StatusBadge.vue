@@ -1,3 +1,5 @@
+<!-- Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md. -->
+
 <template>
   <div class="flex items-center gap-1.5">
     <span
@@ -24,7 +26,7 @@ const variantClass = computed(() => {
   switch (props.status) {
     case 'active':
     case 'success':
-      return 'bg-green-500'
+      return 'bg-primary-500'
     case 'disabled':
     case 'inactive':
     case 'warning':

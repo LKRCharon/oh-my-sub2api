@@ -1,3 +1,5 @@
+<!-- Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md. -->
+
 <script setup lang="ts">
 import { computed, onBeforeUnmount, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -111,7 +113,7 @@ onBeforeUnmount(() => {
           type="button"
           class="rounded p-0.5 transition-colors"
           :class="copiedEndpoint === item.endpoint
-            ? 'text-emerald-500 dark:text-emerald-400'
+            ? 'text-primary-500 dark:text-primary-400'
             : 'text-gray-400 hover:text-primary-500 dark:text-gray-500 dark:hover:text-primary-400'"
           :aria-label="tooltipHint(item.endpoint)"
           @click="copy(item.endpoint)"

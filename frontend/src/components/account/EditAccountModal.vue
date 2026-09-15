@@ -1,3 +1,5 @@
+<!-- Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md. -->
+
 <template>
   <BaseDialog
     :show="show"
@@ -1344,7 +1346,7 @@
               type="button"
               @click="syncAntigravityUpstreamModels"
               :disabled="isSyncingAntigravityUpstream || !account?.id"
-              class="rounded-lg border border-emerald-200 px-3 py-1.5 text-sm text-emerald-600 hover:bg-emerald-50 disabled:cursor-not-allowed disabled:opacity-60 dark:border-emerald-800 dark:text-emerald-400 dark:hover:bg-emerald-900/30"
+              class="rounded-lg border border-primary-200 px-3 py-1.5 text-sm text-primary-600 hover:bg-primary-50 disabled:cursor-not-allowed disabled:opacity-60 dark:border-primary-800 dark:text-primary-400 dark:hover:bg-primary-900/30"
             >
               {{ isSyncingAntigravityUpstream ? t('admin.accounts.syncUpstreamModelsLoading') : t('admin.accounts.syncUpstreamModels') }}
             </button>
@@ -3642,7 +3644,7 @@ const codexImageToolBadgeLabel = computed(() => {
 const codexImageToolBadgeClass = computed(() => {
   switch (codexImageToolMode.value) {
     case 'enabled':
-      return 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300'
+      return 'bg-primary-100 text-primary-700 dark:bg-primary-900/40 dark:text-primary-300'
     case 'disabled':
       return 'bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300'
     case 'block':

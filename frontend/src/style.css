@@ -1,3 +1,5 @@
+/* Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md. */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -106,10 +108,10 @@
   }
 
   .btn-success {
-    @apply bg-gradient-to-r from-emerald-500 to-emerald-600;
-    @apply text-white shadow-md shadow-emerald-500/25;
-    @apply hover:from-emerald-600 hover:to-emerald-700 hover:shadow-lg hover:shadow-emerald-500/30;
-    @apply dark:shadow-emerald-500/20;
+    @apply bg-gradient-to-r from-primary-500 to-primary-600;
+    @apply text-white shadow-md shadow-primary-500/25;
+    @apply hover:from-primary-600 hover:to-primary-700 hover:shadow-lg hover:shadow-primary-500/30;
+    @apply dark:shadow-primary-500/20;
   }
 
   .btn-warning {
@@ -127,9 +129,9 @@
   }
 
   .btn-airwallex {
-    @apply bg-[#14171A] text-white shadow-md shadow-emerald-500/20;
-    @apply hover:bg-[#20252a] hover:shadow-lg hover:shadow-emerald-500/25;
-    @apply dark:bg-[#7AF0C4] dark:text-gray-950 dark:shadow-emerald-500/20;
+    @apply bg-[#14171A] text-white shadow-md shadow-primary-500/20;
+    @apply hover:bg-[#20252a] hover:shadow-lg hover:shadow-primary-500/25;
+    @apply dark:bg-[#7AF0C4] dark:text-gray-950 dark:shadow-primary-500/20;
     @apply dark:hover:bg-[#62d9ad];
   }
 
@@ -276,7 +278,7 @@
   }
 
   .stat-icon-success {
-    @apply bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400;
+    @apply bg-primary-100 text-primary-600 dark:bg-primary-900/30 dark:text-primary-400;
   }
 
   .stat-icon-warning {
@@ -300,7 +302,7 @@
   }
 
   .stat-trend-up {
-    @apply text-emerald-600 dark:text-emerald-400;
+    @apply text-primary-600 dark:text-primary-400;
   }
 
   .stat-trend-down {
@@ -349,7 +351,7 @@
   }
 
   .badge-success {
-    @apply bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400;
+    @apply bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-400;
   }
 
   .badge-warning {
@@ -521,7 +523,7 @@
   }
 
   .toast-success {
-    @apply border-l-emerald-500;
+    @apply border-l-primary-500;
   }
 
   .toast-error {
@@ -544,6 +546,16 @@
     @apply flex flex-col;
     @apply transition-transform duration-300;
     transition-property: width, transform;
+  }
+
+  /* Disable transitions during drag resize */
+  .sidebar.is-resizing,
+  .is-resizing .sidebar {
+    transition: none !important;
+  }
+
+  body.is-resizing .transition-all {
+    transition: none !important;
   }
 
   .sidebar-header {
@@ -721,8 +733,8 @@
   }
 
   .tour-success-box {
-    @apply rounded-md border-l-4 border-emerald-500 bg-emerald-50 px-3 py-2 text-xs text-emerald-900;
-    @apply dark:border-emerald-400 dark:bg-emerald-950/40 dark:text-emerald-200;
+    @apply rounded-md border-l-4 border-primary-500 bg-primary-50 px-3 py-2 text-xs text-primary-900;
+    @apply dark:border-primary-400 dark:bg-primary-950/40 dark:text-primary-200;
   }
 
   .tour-warning-box {

@@ -1,3 +1,5 @@
+// Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md.
+
 import { describe, expect, it, beforeEach, afterEach, vi } from 'vitest'
 import { flushPromises, mount } from '@vue/test-utils'
 import { nextTick } from 'vue'
@@ -93,7 +95,7 @@ vi.mock('@/stores', () => ({
     get cachedPublicSettings() {
       return appStoreState.cachedPublicSettings
     },
-    siteName: 'Sub2API',
+    siteName: 'Oh My Sub2API',
     siteLogo: '',
     docUrl: '',
     publicSettingsLoaded: true,

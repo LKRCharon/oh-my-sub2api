@@ -1,3 +1,5 @@
+// Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md.
+
 package service
 
 import (
@@ -50,8 +52,7 @@ func sanitizeOpenAIResponsesOrphanToolOutputs(reqBody map[string]any, input []an
 		// named function outputs without a preceding function call. Preserve
 		// their native type, namespace and output instead of silently dropping
 		// the request that started the turn.
-		if callID == "" && strings.TrimSpace(firstNonEmptyString(item["type"])) == "function_call_output" &&
-			strings.TrimSpace(firstNonEmptyString(item["name"])) != "" {
+		if isNamedStandaloneFunctionOutput(firstNonEmptyString(item["type"]), callID, firstNonEmptyString(item["name"])) {
 			normalized = append(normalized, rawItem)
 			continue
 		}

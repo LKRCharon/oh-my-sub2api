@@ -1,3 +1,5 @@
+// Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md.
+
 import { mount } from '@vue/test-utils'
 import { describe, expect, it, vi } from 'vitest'
 
@@ -59,9 +61,9 @@ describe('MonitorQuotaView', () => {
     expect(text).toContain('95%')
 
     const html = wrapper.html()
-    // 阈值配色（三处共用的 UsageProgressBar 统一）：≥90 红 / ≥75 黄 / 其余绿
-    // 42.4 → 绿、80 → 黄、95 → 红
-    expect(html).toContain('bg-green-500')
+    // 阈值配色（三处共用的 UsageProgressBar 统一）：≥90 红 / ≥75 黄 / 其余 Apple Blue
+    // 42.4 → Apple Blue、80 → 黄、95 → 红
+    expect(html).toContain('bg-primary-500')
     expect(html).toContain('bg-amber-500')
     expect(html).toContain('bg-red-500')
   })

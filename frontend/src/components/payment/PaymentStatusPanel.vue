@@ -1,3 +1,5 @@
+<!-- Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md. -->
+
 <template>
   <div class="space-y-4">
     <!-- ═══ Terminal States: show result, user clicks to return ═══ -->
@@ -6,8 +8,8 @@
     <template v-if="outcome === 'success'">
       <div class="card p-6">
         <div class="flex flex-col items-center space-y-4 py-4">
-          <div class="flex h-16 w-16 items-center justify-center rounded-full bg-green-100 dark:bg-green-900/30">
-            <Icon name="check" size="lg" class="text-green-500" />
+          <div class="flex h-16 w-16 items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900/30">
+            <Icon name="check" size="lg" class="text-primary-500" />
           </div>
           <p class="text-lg font-bold text-gray-900 dark:text-white">{{ props.orderType === 'subscription' ? t('payment.result.subscriptionSuccess') : t('payment.result.success') }}</p>
           <div v-if="paidOrder" class="w-full rounded-xl bg-gray-50 p-4 dark:bg-dark-800">
@@ -298,7 +300,7 @@ const showQRCode = computed(() => !!qrUrl.value && (!isMobileAlipayDeepLink.valu
 
 const qrBorderClass = computed(() => {
   if (isAlipay.value) return 'border-[#00AEEF] bg-blue-50 dark:border-[#00AEEF]/70 dark:bg-blue-950/20'
-  if (isWxpay.value) return 'border-[#2BB741] bg-green-50 dark:border-[#2BB741]/70 dark:bg-green-950/20'
+  if (isWxpay.value) return 'border-[#2BB741] bg-primary-50 dark:border-[#2BB741]/70 dark:bg-primary-950/20'
   return 'border-gray-200 bg-white dark:border-dark-600 dark:bg-dark-800'
 })
 

@@ -1,3 +1,5 @@
+// Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md.
+
 package service
 
 import (
@@ -19,6 +21,8 @@ import (
 	"strings"
 	"time"
 
+	"golang.org/x/mod/semver"
+
 	infraerrors "github.com/Wei-Shaw/sub2api/internal/pkg/errors"
 )
 
@@ -30,7 +34,7 @@ var (
 const (
 	updateCacheKey = "update_check_cache"
 	updateCacheTTL = 1200 // 20 minutes
-	githubRepo     = "Wei-Shaw/sub2api"
+	githubRepo     = "LKRCharon/oh-my-sub2api"
 
 	// Security: allowed download domains for updates
 	allowedDownloadHost = "github.com"
@@ -639,6 +643,12 @@ func (s *UpdateService) saveToCache(ctx context.Context, info *UpdateInfo) {
 
 // compareVersions compares two semantic versions
 func compareVersions(current, latest string) int {
+	currentSemver := "v" + strings.TrimPrefix(current, "v")
+	latestSemver := "v" + strings.TrimPrefix(latest, "v")
+	if semver.IsValid(currentSemver) && semver.IsValid(latestSemver) {
+		return semver.Compare(currentSemver, latestSemver)
+	}
+	// Keep the existing fallback for development builds without a semantic version.
 	currentParts := parseVersion(current)
 	latestParts := parseVersion(latest)
 

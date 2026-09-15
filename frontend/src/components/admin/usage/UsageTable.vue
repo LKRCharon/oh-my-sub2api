@@ -1,3 +1,5 @@
+<!-- Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md. -->
+
 <template>
   <div :class="flat ? '' : 'card overflow-hidden'">
     <div
@@ -132,7 +134,7 @@
             <span
               v-if="row.native_compaction_v2"
               data-testid="native-compaction-badge"
-              class="inline-flex items-center rounded bg-teal-100 px-2 py-0.5 text-xs font-medium text-teal-800 dark:bg-teal-900 dark:text-teal-200"
+              class="inline-flex items-center rounded bg-primary-100 px-2 py-0.5 text-xs font-medium text-primary-800 dark:bg-primary-900 dark:text-primary-200"
             >
               {{ t('usage.nativeCompactionV2') }}
             </span>
@@ -159,7 +161,7 @@
             <div class="space-y-1 text-sm">
               <div class="flex items-center gap-2">
                 <div class="inline-flex items-center gap-1">
-                  <Icon name="arrowDown" size="sm" class="h-3.5 w-3.5 text-emerald-500" />
+                  <Icon name="arrowDown" size="sm" class="h-3.5 w-3.5 text-primary-500" />
                   <span class="font-medium text-gray-900 dark:text-white">{{ row.input_tokens?.toLocaleString() || 0 }}</span>
                 </div>
                 <div class="inline-flex items-center gap-1">
@@ -208,7 +210,7 @@
         <template #cell-cost="{ row }">
           <div class="text-sm">
             <div class="flex items-center gap-1.5">
-              <span class="font-medium text-green-600 dark:text-green-400">${{ row.actual_cost?.toFixed(6) || '0.000000' }}</span>
+              <span class="font-medium text-primary-600 dark:text-primary-400">${{ row.actual_cost?.toFixed(6) || '0.000000' }}</span>
               <span
                 v-if="row.long_context_billing_applied"
                 data-testid="long-context-billing-marker"
@@ -505,7 +507,7 @@
           </div>
           <div class="flex items-center justify-between gap-6">
             <span class="text-gray-400">{{ t('usage.userBilled') }}</span>
-            <span class="font-semibold text-green-400">${{ tooltipData?.actual_cost?.toFixed(8) || '0.00000000' }}</span>
+            <span class="font-semibold text-primary-400">${{ tooltipData?.actual_cost?.toFixed(8) || '0.00000000' }}</span>
           </div>
           <!-- Account billing (separated from user billing) -->
           <template v-if="showAccountBilling">
@@ -515,7 +517,7 @@
             </div>
             <div class="flex items-center justify-between gap-6">
               <span class="text-gray-400">{{ t('usage.accountBilled') }}</span>
-              <span class="font-semibold text-green-400">
+              <span class="font-semibold text-primary-400">
                 ${{ accountBilled({
                   total_cost: tooltipData?.total_cost,
                   account_stats_cost: tooltipData?.account_stats_cost,

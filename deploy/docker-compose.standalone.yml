@@ -1,3 +1,5 @@
+# Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md.
+
 # =============================================================================
 # Sub2API Docker Compose - Standalone Configuration
 # =============================================================================
@@ -12,7 +14,7 @@
 
 services:
   sub2api:
-    image: weishaw/sub2api:latest
+    image: ghcr.io/lkrcharon/oh-my-sub2api:latest
     container_name: sub2api
     restart: unless-stopped
     security_opt:

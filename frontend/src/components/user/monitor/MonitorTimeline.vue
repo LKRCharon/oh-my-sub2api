@@ -1,3 +1,5 @@
+<!-- Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md. -->
+
 <template>
   <div class="mt-4 pt-3 border-t border-gray-100 dark:border-dark-700/60">
     <div
@@ -70,7 +72,7 @@ const STATUS_HEIGHT: Record<string, number> = {
 }
 
 const STATUS_COLOR: Record<string, string> = {
-  operational: 'bg-emerald-500',
+  operational: 'bg-primary-500',
   degraded: 'bg-amber-500',
   failed: 'bg-red-500',
   error: 'bg-red-500',

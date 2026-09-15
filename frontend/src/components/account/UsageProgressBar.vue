@@ -1,3 +1,5 @@
+<!-- Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md. -->
+
 <template>
   <div>
     <!-- Window stats row (above progress bar) -->
@@ -73,7 +75,7 @@ const props = withDefaults(
     label: string
     utilization: number // Percentage (0-100+)
     resetsAt?: string | null
-    color: 'indigo' | 'emerald' | 'purple' | 'amber'
+    color: 'indigo' | 'primary' | 'purple' | 'amber'
     windowStats?: WindowStats | null
     estimatedTotalCost?: number | null
     showNowWhenIdle?: boolean
@@ -113,7 +115,7 @@ watch(
 const labelClass = computed(() => {
   const colors = {
     indigo: 'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300',
-    emerald: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300',
+    primary: 'bg-primary-100 text-primary-700 dark:bg-primary-900/40 dark:text-primary-300',
     purple: 'bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300',
     amber: 'bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300'
   }
@@ -143,7 +145,7 @@ const barClass = computed(() => {
   } else if (props.utilization >= 75) {
     return 'bg-amber-500'
   } else {
-    return 'bg-green-500'
+    return 'bg-primary-500'
   }
 })
 

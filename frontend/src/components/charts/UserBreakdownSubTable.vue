@@ -1,3 +1,5 @@
+<!-- Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md. -->
+
 <template>
   <div class="bg-gray-50/50 dark:bg-dark-700/30">
     <div v-if="loading" class="flex items-center justify-center py-3">
@@ -22,7 +24,7 @@
           <td class="py-1 text-right text-gray-500 dark:text-gray-400">
             {{ formatTokens(user.total_tokens) }}
           </td>
-          <td class="py-1 text-right text-green-600 dark:text-green-400">
+          <td class="py-1 text-right text-primary-600 dark:text-primary-400">
             ${{ formatCost(user.actual_cost) }}
           </td>
           <td v-if="showAccountCost" class="py-1 text-right text-orange-500 dark:text-orange-400">

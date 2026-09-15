@@ -1,3 +1,5 @@
+// Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md.
+
 export default {
   common: {
     loading: 'Loading...',
@@ -163,6 +165,7 @@ export default {
 
   // Navigation
   nav: {
+    resizeSidebar: 'Resize sidebar',
     dashboard: 'Dashboard',
     announcements: 'Announcements',
     apiKeys: 'API Keys',

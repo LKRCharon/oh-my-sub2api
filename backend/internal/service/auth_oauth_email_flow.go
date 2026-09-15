@@ -1,3 +1,5 @@
+// Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md.
+
 package service
 
 import (
@@ -46,7 +48,7 @@ func (s *AuthService) SendPendingOAuthVerifyCode(ctx context.Context, email stri
 		return nil, err
 	}
 
-	siteName := "Sub2API"
+	siteName := "Oh My Sub2API"
 	if s.settingService != nil {
 		siteName = s.settingService.GetSiteName(ctx)
 	}

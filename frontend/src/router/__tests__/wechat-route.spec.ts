@@ -1,3 +1,5 @@
+// Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md.
+
 import { describe, expect, it, vi } from 'vitest'
 
 const authStore = vi.hoisted(() => ({
@@ -8,7 +10,7 @@ const authStore = vi.hoisted(() => ({
 }))
 
 const appStore = vi.hoisted(() => ({
-  siteName: 'Sub2API',
+  siteName: 'Oh My Sub2API',
   backendModeEnabled: false,
   cachedPublicSettings: null as null | Record<string, unknown>,
 }))

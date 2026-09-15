@@ -1,3 +1,5 @@
+<!-- Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md. -->
+
 <template>
   <AppLayout>
     <TablePageLayout>
@@ -95,7 +97,7 @@
                         <span class="flex-1 text-left">{{ t('admin.accounts.syncFromCrs') }}</span>
                       </button>
                       <button class="account-tools-menu-item" @click="openImportData">
-                        <span class="account-tools-menu-icon bg-emerald-50 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-300">
+                        <span class="account-tools-menu-icon bg-primary-50 text-primary-600 dark:bg-primary-900/30 dark:text-primary-300">
                           <Icon name="upload" size="sm" />
                         </span>
                         <span class="flex-1 text-left">{{ t('admin.accounts.dataImport') }}</span>
@@ -352,7 +354,7 @@
               <span>{{ formatMultiplier(row.rate_multiplier ?? 1) }}x</span>
               <span
                 v-if="row.extra?.upstream_billing_rate_sync_enabled === true"
-                class="inline-flex cursor-help text-emerald-600 dark:text-emerald-400"
+                class="inline-flex cursor-help text-primary-600 dark:text-primary-400"
                 :aria-label="t('admin.accounts.upstreamBilling.syncedRateTooltip')"
                 :title="t('admin.accounts.upstreamBilling.syncedRateTooltip')"
                 data-testid="account-rate-sync-indicator"
@@ -422,7 +424,7 @@
                 </span>
                 <span
                   v-if="row.auto_pause_on_expired && value"
-                  class="inline-flex items-center rounded-md bg-emerald-100 px-2 py-0.5 text-xs font-medium text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300"
+                  class="inline-flex items-center rounded-md bg-primary-100 px-2 py-0.5 text-xs font-medium text-primary-700 dark:bg-primary-900/30 dark:text-primary-300"
                 >
                   {{ t('admin.accounts.autoPauseOnExpired') }}
                 </span>
@@ -1742,8 +1744,8 @@ function getOpenAICompactMeta(row: any): { label: string; className: string; dot
     case 'active':
       return {
         label: t('admin.accounts.openai.compactSupported'),
-        className: 'text-emerald-600 dark:text-emerald-300',
-        dotClass: 'bg-emerald-500 shadow-[0_0_0_2px_rgba(16,185,129,0.14)]'
+        className: 'text-primary-600 dark:text-primary-300',
+        dotClass: 'bg-primary-500 shadow-[0_0_0_2px_rgba(16,185,129,0.14)]'
       }
     case 'blocked':
       return {

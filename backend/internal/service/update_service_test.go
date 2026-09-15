@@ -1,5 +1,7 @@
 //go:build unit
 
+// Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md.
+
 package service
 
 import (
@@ -28,13 +30,40 @@ func (s *updateServiceCacheStub) SetUpdateInfo(_ context.Context, data string, _
 }
 
 type updateServiceGitHubClientStub struct {
+	requestedRepo  string
 	release        *GitHubRelease
 	recentReleases []*GitHubRelease
 	recentErr      error
 }
 
-func (s *updateServiceGitHubClientStub) FetchLatestRelease(context.Context, string) (*GitHubRelease, error) {
+func (s *updateServiceGitHubClientStub) FetchLatestRelease(_ context.Context, repo string) (*GitHubRelease, error) {
+	s.requestedRepo = repo
 	return s.release, nil
+}
+
+func TestUpdateServiceDetectsForkRevision(t *testing.T) {
+	client := &updateServiceGitHubClientStub{release: &GitHubRelease{TagName: "v0.2.5-ohmy.10"}}
+	svc := NewUpdateService(&updateServiceCacheStub{}, client, "0.2.5-ohmy.2", "release")
+	info, err := svc.CheckUpdate(context.Background(), true)
+	require.NoError(t, err)
+	require.True(t, info.HasUpdate)
+	require.Equal(t, "0.2.5-ohmy.10", info.LatestVersion)
+	require.Equal(t, "LKRCharon/oh-my-sub2api", client.requestedRepo)
+}
+
+func TestUpdateServiceRollbackSortsForkRevisions(t *testing.T) {
+	svc := newRollbackTestService("0.2.5-ohmy.11", []*GitHubRelease{
+		{TagName: "v0.2.5-ohmy.2"},
+		{TagName: "v0.2.5-ohmy.10"},
+		{TagName: "v0.2.5-ohmy.12"},
+		{TagName: "v0.2.5-ohmy.1"},
+	})
+	versions, err := svc.ListRollbackVersions(context.Background())
+	require.NoError(t, err)
+	require.Len(t, versions, 3)
+	require.Equal(t, "0.2.5-ohmy.10", versions[0].Version)
+	require.Equal(t, "0.2.5-ohmy.2", versions[1].Version)
+	require.Equal(t, "0.2.5-ohmy.1", versions[2].Version)
 }
 
 func (s *updateServiceGitHubClientStub) FetchRecentReleases(context.Context, string, int) ([]*GitHubRelease, error) {

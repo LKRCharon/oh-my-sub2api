@@ -1,3 +1,5 @@
+<!-- Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md. -->
+
 <template>
   <div class="flex min-h-screen items-center justify-center bg-slate-50 p-4 dark:bg-slate-950">
     <div
@@ -29,7 +31,7 @@
 
       <!-- Success -->
       <div v-else-if="success" class="space-y-3 py-4 text-center">
-        <div class="text-5xl text-green-600 dark:text-green-400">✓</div>
+        <div class="text-5xl text-primary-600 dark:text-primary-400">✓</div>
         <p class="text-sm text-gray-500 dark:text-slate-400">{{ t('payment.result.success') }}</p>
         <button
           class="text-sm underline dark:text-blue-400 dark:hover:text-blue-300"

@@ -1,3 +1,5 @@
+// Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md.
+
 export default {
   common: {
     loading: '加载中...',
@@ -163,6 +165,7 @@ export default {
 
   // Navigation
   nav: {
+    resizeSidebar: '调整侧边栏宽度',
     dashboard: '仪表盘',
     announcements: '公告',
     apiKeys: 'API 密钥',

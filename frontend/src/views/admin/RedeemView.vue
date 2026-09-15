@@ -1,3 +1,5 @@
+<!-- Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md. -->
+
 <template>
   <AppLayout>
     <TablePageLayout>
@@ -95,7 +97,7 @@
                 :class="[
                   'flex items-center transition-colors',
                   copiedCode === value
-                    ? 'text-green-500'
+                    ? 'text-primary-500'
                     : 'text-gray-400 hover:text-gray-600 dark:hover:text-gray-300'
                 ]"
                 :title="copiedCode === value ? t('admin.redeem.copied') : t('keys.copyToClipboard')"
@@ -534,10 +536,10 @@
           >
             <div class="flex items-center gap-3">
               <div
-                class="flex h-10 w-10 items-center justify-center rounded-full bg-green-100 dark:bg-green-900/30"
+                class="flex h-10 w-10 items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900/30"
               >
                 <svg
-                  class="h-5 w-5 text-green-600 dark:text-green-400"
+                  class="h-5 w-5 text-primary-600 dark:text-primary-400"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"

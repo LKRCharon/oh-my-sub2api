@@ -1,6 +1,10 @@
+# Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md.
+
 .PHONY: build build-backend build-frontend test test-backend test-frontend test-frontend-critical
 
 FRONTEND_CRITICAL_VITEST := \
+	src/components/layout/__tests__/SidebarResizeHandle.spec.ts \
+	src/stores/__tests__/app.spec.ts \
 	src/i18n/__tests__/localeKeyCompleteness.spec.ts \
 	src/api/__tests__/client.spec.ts \
 	src/api/__tests__/tokenRefresh.spec.ts \
@@ -20,7 +24,8 @@ FRONTEND_CRITICAL_VITEST := \
 	src/features/channel-monitor-v2/__tests__/monitorZoom.spec.ts
 
 # 一键编译前后端
-build: build-backend build-frontend
+build: build-frontend
+	@$(MAKE) -C backend build GO_BUILD_FLAGS=-tags=embed
 
 # 编译后端（复用 backend/Makefile）
 build-backend:

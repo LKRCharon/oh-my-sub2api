@@ -1,3 +1,5 @@
+<!-- Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md. -->
+
 <template>
   <div class="card p-4">
     <div class="mb-4 flex items-center justify-between gap-3">
@@ -73,7 +75,7 @@
                 <td class="py-1.5 text-right text-gray-600 dark:text-gray-400">
                   {{ formatTokens(group.total_tokens) }}
                 </td>
-                <td class="py-1.5 text-right text-green-600 dark:text-green-400">
+                <td class="py-1.5 text-right text-primary-600 dark:text-primary-400">
                   ${{ formatCost(group.actual_cost) }}
                 </td>
                 <td v-if="showAccountCost" class="py-1.5 text-right text-orange-500 dark:text-orange-400">
@@ -182,7 +184,7 @@ const chartColors = [
   '#ef4444',
   '#8b5cf6',
   '#ec4899',
-  '#14b8a6',
+  '#007AFF',
   '#f97316',
   '#6366f1',
   '#84cc16'

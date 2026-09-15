@@ -1,10 +1,12 @@
+# Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md.
+
 .PHONY: build generate test test-unit test-integration test-e2e
 
 VERSION ?= $(shell ./scripts/resolve-version.sh)
 LDFLAGS ?= -s -w -X main.Version=$(VERSION)
 
 build:
-	CGO_ENABLED=0 go build -ldflags="$(LDFLAGS)" -trimpath -o bin/server ./cmd/server
+	CGO_ENABLED=0 go build $(GO_BUILD_FLAGS) -ldflags="$(LDFLAGS)" -trimpath -o bin/server ./cmd/server
 
 generate:
 	go generate ./ent

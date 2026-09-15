@@ -1,3 +1,5 @@
+<!-- Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md. -->
+
 <template>
   <AppLayout>
     <div class="space-y-6">
@@ -93,8 +95,8 @@ const stats = ref<DashboardStats | null>(null)
 
 function methodColor(type: string): string {
   const c: Record<string, string> = {
-    alipay: 'bg-blue-500', wxpay: 'bg-green-500',
-    alipay_direct: 'bg-blue-400', wxpay_direct: 'bg-green-400',
+    alipay: 'bg-blue-500', wxpay: 'bg-primary-500',
+    alipay_direct: 'bg-blue-400', wxpay_direct: 'bg-primary-400',
     stripe: 'bg-purple-500',
   }
   return c[type] || 'bg-gray-400'

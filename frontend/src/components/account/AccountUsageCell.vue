@@ -1,3 +1,5 @@
+<!-- Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md. -->
+
 <template>
   <div ref="rootRef" v-if="showUsageWindows">
     <!-- Anthropic OAuth and Setup Token accounts: fetch real usage data -->
@@ -56,7 +58,7 @@
           label="7d"
           :utilization="usageInfo.seven_day.utilization"
           :resets-at="usageInfo.seven_day.resets_at"
-          color="emerald"
+          color="primary"
         />
 
         <!-- 7d Sonnet Window (OAuth only) -->
@@ -136,7 +138,7 @@
           :window-stats="usageInfo.seven_day.window_stats"
           :estimated-total-cost="openAISevenDayEstimatedTotalCost"
           :show-now-when-idle="true"
-          color="emerald"
+          color="primary"
         />
         <!--
           Upstream codex /wham/usage quota query + reset. The local active-sampling
@@ -305,7 +307,7 @@
           :label="t('admin.accounts.usageWindow.gemini3Flash')"
           :utilization="antigravity3FlashUsageFromAPI.utilization"
           :resets-at="antigravity3FlashUsageFromAPI.resetTime"
-          color="emerald"
+          color="primary"
         />
 
         <!-- Gemini 3 Image -->
@@ -368,7 +370,7 @@
             :utilization="grokFreeTokenBar.utilization"
             :window-stats="grokFreeQuotaUsage"
             :show-now-when-idle="true"
-            color="emerald"
+            color="primary"
           />
           <div v-else-if="grokQuotaUnknown" class="text-[10px] text-gray-500 dark:text-gray-400">
             {{ grokQuotaUnknownLabel }}
@@ -399,7 +401,7 @@
           >
             <span
               v-if="grokPrepaidMoneyLine.showPrepaid"
-              class="rounded bg-emerald-50 px-1 py-0.5 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300"
+              class="rounded bg-primary-50 px-1 py-0.5 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300"
               :title="t('admin.accounts.usageWindow.grokPrepaid')"
             >
               {{ t('admin.accounts.usageWindow.grokPrepaid') }} ${{ grokPrepaidMoneyLine.prepaid }}
@@ -628,7 +630,7 @@
         label="7d"
         :utilization="quotaWeeklyBar.utilization"
         :resets-at="quotaWeeklyBar.resetsAt"
-        color="emerald"
+        color="primary"
       />
       <UsageProgressBar
         v-if="quotaTotalBar"
@@ -1096,7 +1098,7 @@ const geminiUsageBars = computed(() => {
     utilization: number
     resetsAt: string | null
     windowStats?: WindowStats | null
-    color: 'indigo' | 'emerald'
+    color: 'indigo' | 'primary'
   }> = []
 
   if (geminiUsesSharedDaily.value) {
@@ -1134,7 +1136,7 @@ const geminiUsageBars = computed(() => {
       utilization: flash.utilization,
       resetsAt: flash.resets_at,
       windowStats: flash.window_stats,
-      color: 'emerald'
+      color: 'primary'
     })
   }
 

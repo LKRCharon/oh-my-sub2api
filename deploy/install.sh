@@ -1,8 +1,9 @@
 #!/bin/bash
+# Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md.
 #
 # Sub2API Installation Script
 # Sub2API 安装脚本
-# Usage: curl -sSL https://raw.githubusercontent.com/Wei-Shaw/sub2api/main/deploy/install.sh | bash
+# Usage: curl -sSL https://raw.githubusercontent.com/LKRCharon/oh-my-sub2api/main/deploy/install.sh | bash
 #
 
 set -e
@@ -31,7 +32,7 @@ CYAN='\033[0;36m'
 NC='\033[0m' # No Color
 
 # Configuration
-GITHUB_REPO="Wei-Shaw/sub2api"
+GITHUB_REPO="LKRCharon/oh-my-sub2api"
 INSTALL_DIR="/opt/sub2api"
 SERVICE_NAME="sub2api"
 SERVICE_USER="sub2api"
@@ -718,7 +719,7 @@ install_service() {
     cat > /etc/systemd/system/sub2api.service << EOF
 [Unit]
 Description=Sub2API - AI API Gateway Platform
-Documentation=https://github.com/Wei-Shaw/sub2api
+Documentation=https://github.com/LKRCharon/oh-my-sub2api
 After=network.target postgresql.service redis.service
 Wants=postgresql.service redis.service
 

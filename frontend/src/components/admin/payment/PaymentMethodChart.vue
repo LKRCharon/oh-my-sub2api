@@ -1,3 +1,5 @@
+<!-- Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md. -->
+
 <template>
   <div class="card p-4">
     <h3 class="mb-4 text-sm font-semibold text-gray-900 dark:text-white">
@@ -54,17 +56,17 @@ const props = defineProps<{
 
 const colorMap: Record<string, string> = {
   alipay: 'bg-blue-500',
-  wxpay: 'bg-green-500',
+  wxpay: 'bg-primary-500',
   alipay_direct: 'bg-blue-400',
-  wxpay_direct: 'bg-green-400',
+  wxpay_direct: 'bg-primary-400',
   stripe: 'bg-purple-500',
 }
 
 const barColorMap: Record<string, string> = {
   alipay: 'bg-blue-500',
-  wxpay: 'bg-green-500',
+  wxpay: 'bg-primary-500',
   alipay_direct: 'bg-blue-400',
-  wxpay_direct: 'bg-green-400',
+  wxpay_direct: 'bg-primary-400',
   stripe: 'bg-purple-500',
 }
 

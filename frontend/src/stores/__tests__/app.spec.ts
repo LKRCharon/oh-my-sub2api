@@ -1,3 +1,5 @@
+// Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md.
+
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 import { setActivePinia, createPinia } from 'pinia'
 import { useAppStore } from '@/stores/app'
@@ -88,6 +90,37 @@ describe('useAppStore', () => {
   afterEach(() => {
     vi.useRealTimers()
     localStorage.clear()
+  })
+
+  describe('sidebar width persistence', () => {
+    it.each([
+      ['320', 320], ['9999', 400], ['-50', 180],
+      ['invalid', 256], ['Infinity', 256], ['', 256]
+    ])('safely restores %s as %s', (saved, expected) => {
+      localStorage.setItem('sidebarWidth', saved)
+      expect(useAppStore().sidebarWidth).toBe(expected)
+    })
+
+    it('persists a bounded width across store instances', () => {
+      useAppStore().setSidebarWidth(420)
+      setActivePinia(createPinia())
+      expect(useAppStore().sidebarWidth).toBe(400)
+      useAppStore().setSidebarWidth(295)
+      expect(localStorage.getItem('sidebarWidth')).toBe('295')
+    })
+
+    it('continues resizing when browser storage is unavailable', () => {
+      const store = useAppStore()
+      const unavailable = vi.spyOn(localStorage, 'setItem').mockImplementation(() => {
+        throw new DOMException('Storage unavailable', 'SecurityError')
+      })
+      try {
+        store.setSidebarWidth(300)
+        expect(store.sidebarWidth).toBe(300)
+      } finally {
+        unavailable.mockRestore()
+      }
+    })
   })
 
   // --- Toast 消息管理 ---

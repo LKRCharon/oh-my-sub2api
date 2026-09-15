@@ -1,3 +1,5 @@
+<!-- Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md. -->
+
 <template>
   <span
     :class="[
@@ -151,7 +153,7 @@ const labelClass = computed(() => {
     return `${base} bg-orange-200/60 text-orange-800 dark:bg-orange-800/40 dark:text-orange-300`
   }
   if (props.platform === 'openai') {
-    return `${base} bg-emerald-200/60 text-emerald-800 dark:bg-emerald-800/40 dark:text-emerald-300`
+    return `${base} bg-primary-200/60 text-primary-800 dark:bg-primary-800/40 dark:text-primary-300`
   }
   if (props.platform === 'gemini') {
     return `${base} bg-blue-200/60 text-blue-800 dark:bg-blue-800/40 dark:text-blue-300`
@@ -169,7 +171,7 @@ const labelClass = computed(() => {
     return `${base} bg-indigo-200/60 text-indigo-800 dark:bg-indigo-800/40 dark:text-indigo-300`
   }
   if (props.platform === 'deepseek') {
-    return `${base} bg-teal-200/60 text-teal-800 dark:bg-teal-800/40 dark:text-teal-300`
+    return `${base} bg-sky-200/60 text-sky-800 dark:bg-sky-800/40 dark:text-sky-300`
   }
   if (props.platform === 'minimax') {
     return `${base} bg-rose-200/60 text-rose-800 dark:bg-rose-800/40 dark:text-rose-300`
@@ -194,8 +196,8 @@ const badgeClass = computed(() => {
   } else if (props.platform === 'openai') {
     // OpenAI: green theme
     return isSubscription.value
-      ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400'
-      : 'bg-green-50 text-green-700 dark:bg-green-900/20 dark:text-green-400'
+      ? 'bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-400'
+      : 'bg-primary-50 text-primary-700 dark:bg-primary-900/20 dark:text-primary-400'
   }
   if (props.platform === 'gemini') {
     return isSubscription.value
@@ -224,8 +226,8 @@ const badgeClass = computed(() => {
   }
   if (props.platform === 'deepseek') {
     return isSubscription.value
-      ? 'bg-teal-100 text-teal-700 dark:bg-teal-900/30 dark:text-teal-400'
-      : 'bg-teal-50 text-teal-700 dark:bg-teal-900/20 dark:text-teal-400'
+      ? 'bg-sky-100 text-sky-700 dark:bg-sky-900/30 dark:text-sky-400'
+      : 'bg-sky-50 text-sky-700 dark:bg-sky-900/20 dark:text-sky-400'
   }
   if (props.platform === 'minimax') {
     return isSubscription.value
@@ -240,6 +242,6 @@ const badgeClass = computed(() => {
   // Fallback: original colors
   return isSubscription.value
     ? 'bg-violet-100 text-violet-700 dark:bg-violet-900/30 dark:text-violet-400'
-    : 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400'
+    : 'bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-400'
 })
 </script>

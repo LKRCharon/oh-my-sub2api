@@ -1,3 +1,5 @@
+// Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md.
+
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 
 const { get, post } = vi.hoisted(() => ({
@@ -25,7 +27,7 @@ describe('admin system rollback API', () => {
       {
         version: '0.1.146',
         published_at: '2026-07-07T00:00:00Z',
-        html_url: 'https://github.com/Wei-Shaw/sub2api/releases/tag/v0.1.146'
+        html_url: 'https://github.com/LKRCharon/oh-my-sub2api/releases/tag/v0.1.146'
       }
     ]
     get.mockResolvedValue({ data: { versions } })

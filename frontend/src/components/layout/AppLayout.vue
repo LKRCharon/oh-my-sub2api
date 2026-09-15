@@ -1,3 +1,5 @@
+<!-- Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md. -->
+
 <template>
   <div class="min-h-screen bg-gray-50 dark:bg-dark-950">
     <!-- Background Decoration -->
@@ -8,8 +10,8 @@
 
     <!-- Main Content Area -->
     <div
-      class="relative min-h-screen transition-all duration-300"
-      :class="[sidebarCollapsed ? 'lg:ml-[72px]' : 'lg:ml-64']"
+      class="relative min-h-screen transition-all duration-300 lg:ml-[var(--sidebar-offset)]"
+      :style="{ '--sidebar-offset': sidebarCollapsed ? '72px' : appStore.sidebarWidth + 'px' }"
     >
       <!-- Header -->
       <AppHeader />

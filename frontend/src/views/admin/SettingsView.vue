@@ -1,3 +1,5 @@
+<!-- Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md. -->
+
 <template>
   <AppLayout>
     <div class="mx-auto max-w-6xl space-y-6">
@@ -170,16 +172,16 @@
                 <!-- Newly Generated Key Display -->
                 <div
                   v-if="newAdminApiKey"
-                  class="space-y-3 rounded-lg border border-green-200 bg-green-50 p-4 dark:border-green-800 dark:bg-green-900/20"
+                  class="space-y-3 rounded-lg border border-primary-200 bg-primary-50 p-4 dark:border-primary-800 dark:bg-primary-900/20"
                 >
                   <p
-                    class="text-sm font-medium text-green-700 dark:text-green-300"
+                    class="text-sm font-medium text-primary-700 dark:text-primary-300"
                   >
                     {{ t("admin.settings.adminApiKey.keyWarning") }}
                   </p>
                   <div class="flex items-center gap-2">
                     <code
-                      class="flex-1 select-all break-all rounded border border-green-300 bg-white px-3 py-2 font-mono text-sm dark:border-green-700 dark:bg-dark-800"
+                      class="flex-1 select-all break-all rounded border border-primary-300 bg-white px-3 py-2 font-mono text-sm dark:border-primary-700 dark:bg-dark-800"
                     >
                       {{ newAdminApiKey }}
                     </code>
@@ -191,7 +193,7 @@
                       {{ t("admin.settings.adminApiKey.copyKey") }}
                     </button>
                   </div>
-                  <p class="text-xs text-green-600 dark:text-green-400">
+                  <p class="text-xs text-primary-600 dark:text-primary-400">
                     {{ t("admin.settings.adminApiKey.usage") }}
                   </p>
                 </div>
@@ -5881,7 +5883,7 @@
                           !expandedProviders[pIdx] &&
                           provider.api_key_configured
                         "
-                        class="text-xs text-green-500"
+                        class="text-xs text-primary-500"
                       >
                         {{
                           t(
@@ -6080,7 +6082,7 @@
                               ? 'bg-red-500'
                               : quotaPercentage(provider) > 70
                                 ? 'bg-yellow-500'
-                                : 'bg-green-500'
+                                : 'bg-primary-500'
                           "
                           :style="{
                             width:
@@ -7825,7 +7827,7 @@
                       v-model="form.payment_product_name_prefix"
                       type="text"
                       class="input"
-                      placeholder="Sub2API"
+                      placeholder="Oh My Sub2API"
                     />
                   </div>
                   <div>
@@ -7847,7 +7849,7 @@
                       class="rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 text-sm text-gray-600 dark:border-dark-600 dark:bg-dark-800 dark:text-gray-300"
                     >
                       {{
-                        (form.payment_product_name_prefix || "Sub2API") +
+                        (form.payment_product_name_prefix || "Oh My Sub2API") +
                         " 100 " +
                         (form.payment_product_name_suffix || "CNY")
                       }}
@@ -8914,14 +8916,14 @@ function localText(zh: string, en: string): string {
 
 const paymentGuideHref = computed(() =>
   locale.value.startsWith("zh")
-    ? "https://github.com/Wei-Shaw/sub2api/blob/main/docs/PAYMENT_CN.md"
-    : "https://github.com/Wei-Shaw/sub2api/blob/main/docs/PAYMENT.md",
+    ? "https://github.com/LKRCharon/oh-my-sub2api/blob/main/docs/PAYMENT_CN.md"
+    : "https://github.com/LKRCharon/oh-my-sub2api/blob/main/docs/PAYMENT.md",
 );
 
 const paymentMethodsHref = computed(() =>
   locale.value.startsWith("zh")
-    ? "https://github.com/Wei-Shaw/sub2api/blob/main/docs/PAYMENT_CN.md#支持的支付方式"
-    : "https://github.com/Wei-Shaw/sub2api/blob/main/docs/PAYMENT.md#supported-payment-methods",
+    ? "https://github.com/LKRCharon/oh-my-sub2api/blob/main/docs/PAYMENT_CN.md#支持的支付方式"
+    : "https://github.com/LKRCharon/oh-my-sub2api/blob/main/docs/PAYMENT.md#supported-payment-methods",
 );
 
 type SettingsTab =
@@ -9621,7 +9623,7 @@ const form = reactive<SettingsForm>({
   default_subscriptions: [],
   force_email_on_third_party_signup: false,
   default_user_rpm_limit: 0,
-  site_name: "Sub2API",
+  site_name: "Oh My Sub2API",
   site_logo: "",
   site_subtitle: "Subscription to API Conversion Platform",
   api_base_url: "",
@@ -13106,7 +13108,7 @@ watch(
   height: 2px;
   border-radius: 9999px;
   content: "";
-  background: linear-gradient(90deg, #14b8a6, #0ea5e9);
+  background: linear-gradient(90deg, #007AFF, #0A84FF);
 }
 
 .settings-tab-icon {

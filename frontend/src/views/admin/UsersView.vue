@@ -1,3 +1,5 @@
+<!-- Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md. -->
+
 <template>
   <AppLayout>
     <TablePageLayout>
@@ -449,7 +451,7 @@
               </div>
               <button
                 @click.stop="handleDeposit(row)"
-                class="rounded px-2 py-0.5 text-xs font-medium text-emerald-600 transition-colors hover:bg-emerald-50 dark:text-emerald-400 dark:hover:bg-emerald-900/20"
+                class="rounded px-2 py-0.5 text-xs font-medium text-primary-600 transition-colors hover:bg-primary-50 dark:text-primary-400 dark:hover:bg-primary-900/20"
                 :title="t('admin.users.deposit')"
               >
                 {{ t('admin.users.deposit') }}
@@ -585,7 +587,7 @@
               <span
                 :class="[
                   'inline-block h-2 w-2 rounded-full',
-                  value === 'active' ? 'bg-green-500' : 'bg-red-500'
+                  value === 'active' ? 'bg-primary-500' : 'bg-red-500'
                 ]"
               ></span>
               <span class="text-sm text-gray-700 dark:text-gray-300">
@@ -629,7 +631,7 @@
                   'flex flex-col items-center gap-0.5 rounded-lg p-1.5 text-gray-500 transition-colors',
                   row.status === 'active'
                     ? 'hover:bg-orange-50 hover:text-orange-600 dark:hover:bg-orange-900/20 dark:hover:text-orange-400'
-                    : 'hover:bg-green-50 hover:text-green-600 dark:hover:bg-green-900/20 dark:hover:text-green-400'
+                    : 'hover:bg-primary-50 hover:text-primary-600 dark:hover:bg-primary-900/20 dark:hover:text-primary-400'
                 ]"
               >
                 <Icon v-if="row.status === 'active'" name="ban" size="sm" />
@@ -708,7 +710,7 @@
                 @click="handleDeposit(user); closeActionMenu()"
                 class="flex w-full items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-dark-700"
               >
-                <Icon name="plus" size="sm" class="text-emerald-500" :stroke-width="2" />
+                <Icon name="plus" size="sm" class="text-primary-500" :stroke-width="2" />
                 {{ t('admin.users.deposit') }}
               </button>
 

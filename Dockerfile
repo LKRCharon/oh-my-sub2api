@@ -1,4 +1,5 @@
 # syntax=docker/dockerfile:1.7
+# Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md.
 # =============================================================================
 # Sub2API Multi-Stage Dockerfile
 # =============================================================================
@@ -108,9 +109,10 @@ FROM ${POSTGRES_IMAGE} AS pg-client
 FROM ${ALPINE_IMAGE}
 
 # Labels
-LABEL maintainer="Wei-Shaw <github.com/Wei-Shaw>"
-LABEL description="Sub2API - AI API Gateway Platform"
-LABEL org.opencontainers.image.source="https://github.com/Wei-Shaw/sub2api"
+LABEL maintainer="Oh My Sub2API contributors <github.com/LKRCharon/oh-my-sub2api>"
+LABEL org.opencontainers.image.licenses="LGPL-3.0-or-later"
+LABEL description="Oh My Sub2API - AI API Gateway Platform"
+LABEL org.opencontainers.image.source="https://github.com/LKRCharon/oh-my-sub2api"
 
 # Install runtime dependencies
 RUN apk add --no-cache \
@@ -137,6 +139,7 @@ RUN addgroup -g 1000 sub2api && \
 
 # Set working directory
 WORKDIR /app
+COPY LICENSE COPYING NOTICE /usr/share/licenses/oh-my-sub2api/
 
 # Copy binary/resources with ownership to avoid extra full-layer chown copy
 COPY --from=backend-builder --chown=sub2api:sub2api /app/sub2api /app/sub2api

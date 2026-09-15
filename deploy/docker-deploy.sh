@@ -1,4 +1,5 @@
 #!/bin/bash
+# Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md.
 # =============================================================================
 # Sub2API Docker Deployment Preparation Script
 # =============================================================================
@@ -21,7 +22,7 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 # GitHub raw content base URL
-GITHUB_RAW_URL="https://raw.githubusercontent.com/Wei-Shaw/sub2api/main/deploy"
+GITHUB_RAW_URL="https://raw.githubusercontent.com/LKRCharon/oh-my-sub2api/main/deploy"
 
 # Print colored message
 print_info() {

@@ -1,3 +1,5 @@
+<!-- Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md. -->
+
 <template>
   <div class="flex flex-col gap-0.5">
     <!-- 并发槽位 -->
@@ -81,7 +83,7 @@ const windowCostClass = computed(() => {
   if (current >= limit + reserve) return 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400'
   if (current >= limit) return 'bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400'
   if (current >= limit * 0.8) return 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400'
-  return 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400'
+  return 'bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-400'
 })
 
 const windowCostTooltip = computed(() => {
@@ -109,7 +111,7 @@ const sessionLimitClass = computed(() => {
   const max = props.account.max_sessions || 0
   if (current >= max) return 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400'
   if (current >= max * 0.8) return 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400'
-  return 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400'
+  return 'bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-400'
 })
 
 const sessionLimitTooltip = computed(() => {
@@ -149,7 +151,7 @@ const rpmClass = computed(() => {
     if (current >= base) return 'bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400'
   }
   if (current >= base * 0.8) return 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400'
-  return 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400'
+  return 'bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-400'
 })
 
 const rpmTooltip = computed(() => {

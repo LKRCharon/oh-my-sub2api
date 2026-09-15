@@ -1,3 +1,5 @@
+<!-- Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md. -->
+
 <template>
   <AppLayout>
     <div class="space-y-6">
@@ -62,7 +64,7 @@
                 :class="[
                   'rounded-full px-2 py-0.5 text-xs font-medium',
                   subscription.status === 'active'
-                    ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300'
+                    ? 'bg-primary-100 text-primary-700 dark:bg-primary-900/40 dark:text-primary-300'
                     : subscription.status === 'expired'
                       ? 'bg-gray-100 text-gray-600 dark:bg-dark-700 dark:text-gray-400'
                       : 'bg-red-100 text-red-700 dark:bg-red-900/40 dark:text-red-300'
@@ -226,15 +228,15 @@
                 !subscription.group?.weekly_limit_usd &&
                 !subscription.group?.monthly_limit_usd
               "
-              class="flex items-center justify-center rounded-xl bg-gradient-to-r from-emerald-50 to-teal-50 py-6 dark:from-emerald-900/20 dark:to-teal-900/20"
+              class="flex items-center justify-center rounded-xl bg-gradient-to-r from-primary-50 to-primary-50 py-6 dark:from-primary-900/20 dark:to-primary-900/20"
             >
               <div class="flex items-center gap-3">
-                <span class="text-4xl text-emerald-600 dark:text-emerald-400">∞</span>
+                <span class="text-4xl text-primary-600 dark:text-primary-400">∞</span>
                 <div>
-                  <p class="text-sm font-medium text-emerald-700 dark:text-emerald-300">
+                  <p class="text-sm font-medium text-primary-700 dark:text-primary-300">
                     {{ t('userSubscriptions.unlimited') }}
                   </p>
-                  <p class="text-xs text-emerald-600/70 dark:text-emerald-400/70">
+                  <p class="text-xs text-primary-600/70 dark:text-primary-400/70">
                     {{ t('userSubscriptions.unlimitedDesc') }}
                   </p>
                 </div>
@@ -269,7 +271,7 @@ import {
 function platformAccentDotClass(p: string): string {
   switch (p) {
     case 'anthropic': return 'bg-orange-500'
-    case 'openai': return 'bg-emerald-500'
+    case 'openai': return 'bg-primary-500'
     case 'antigravity': return 'bg-purple-500'
     case 'gemini': return 'bg-blue-500'
     default: return 'bg-gray-400'
@@ -314,7 +316,7 @@ function getProgressBarClass(used: number | undefined, limit: number | null | un
   const percentage = ((used || 0) / limit) * 100
   if (percentage >= 90) return 'bg-red-500'
   if (percentage >= 70) return 'bg-orange-500'
-  return 'bg-green-500'
+  return 'bg-primary-500'
 }
 
 function formatExpirationDate(expiresAt: string): string {

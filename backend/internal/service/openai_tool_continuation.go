@@ -1,3 +1,5 @@
+// Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md.
+
 package service
 
 import (
@@ -22,6 +24,13 @@ type FunctionCallOutputValidation struct {
 	HasToolCallContext                 bool
 	HasFunctionCallOutputMissingCallID bool
 	HasItemReferenceForAllCallIDs      bool
+}
+
+// Codex injects externally supplied turn inputs as named function outputs.
+// Their optional message id identifies the input, not a preceding tool call.
+func isNamedStandaloneFunctionOutput(itemType, callID, name string) bool {
+	return strings.TrimSpace(itemType) == "function_call_output" &&
+		strings.TrimSpace(callID) == "" && strings.TrimSpace(name) != ""
 }
 
 func isCodexToolCallContextItemType(typ string) bool {
@@ -76,6 +85,9 @@ func NeedsToolContinuation(reqBody map[string]any) bool {
 			continue
 		}
 		itemType, _ := itemMap["type"].(string)
+		if isNamedStandaloneFunctionOutput(itemType, firstNonEmptyString(itemMap["call_id"]), firstNonEmptyString(itemMap["name"])) {
+			continue
+		}
 		if isCodexToolCallItemType(itemType) || itemType == "item_reference" {
 			return true
 		}
@@ -105,6 +117,9 @@ func AnalyzeToolContinuationSignals(reqBody map[string]any) ToolContinuationSign
 			continue
 		}
 		itemType, _ := itemMap["type"].(string)
+		if isNamedStandaloneFunctionOutput(itemType, firstNonEmptyString(itemMap["call_id"]), firstNonEmptyString(itemMap["name"])) {
+			continue
+		}
 		switch {
 		case isCodexToolCallContextItemType(itemType):
 			callID, _ := itemMap["call_id"].(string)
@@ -173,6 +188,9 @@ func ValidateFunctionCallOutputContextBytes(body []byte) FunctionCallOutputValid
 			return true
 		}
 		itemType := item.Get("type").String()
+		if isNamedStandaloneFunctionOutput(itemType, item.Get("call_id").String(), item.Get("name").Str) {
+			return true
+		}
 		switch {
 		case isCodexToolCallOutputItemType(itemType):
 			result.HasFunctionCallOutput = true
@@ -247,6 +265,9 @@ func AnalyzeToolCallOutputContextCoverageBytes(body []byte) ToolCallOutputContex
 			return
 		}
 		itemType := item.Get("type").String()
+		if isNamedStandaloneFunctionOutput(itemType, item.Get("call_id").String(), item.Get("name").Str) {
+			return
+		}
 		switch {
 		case isCodexToolCallOutputItemType(itemType):
 			coverage.HasFunctionCallOutput = true
@@ -321,6 +342,9 @@ func ValidateFunctionCallOutputContext(reqBody map[string]any) FunctionCallOutpu
 			continue
 		}
 		itemType, _ := itemMap["type"].(string)
+		if isNamedStandaloneFunctionOutput(itemType, firstNonEmptyString(itemMap["call_id"]), firstNonEmptyString(itemMap["name"])) {
+			continue
+		}
 		switch {
 		case isCodexToolCallOutputItemType(itemType):
 			result.HasFunctionCallOutput = true
@@ -347,6 +371,9 @@ func ValidateFunctionCallOutputContext(reqBody map[string]any) FunctionCallOutpu
 			continue
 		}
 		itemType, _ := itemMap["type"].(string)
+		if isNamedStandaloneFunctionOutput(itemType, firstNonEmptyString(itemMap["call_id"]), firstNonEmptyString(itemMap["name"])) {
+			continue
+		}
 		switch {
 		case isCodexToolCallOutputItemType(itemType):
 			callID, _ := itemMap["call_id"].(string)

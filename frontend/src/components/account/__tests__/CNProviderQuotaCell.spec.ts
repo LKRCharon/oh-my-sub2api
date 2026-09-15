@@ -1,3 +1,5 @@
+// Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md.
+
 import { flushPromises, mount } from '@vue/test-utils'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import CNProviderQuotaCell from '../CNProviderQuotaCell.vue'
@@ -80,7 +82,7 @@ describe('CNProviderQuotaCell', () => {
     expect(bars[0].props('resetsAt')).toBe('2026-08-18T12:30:00+08:00')
     expect(bars[1].props('label')).toBe('admin.accounts.cnProviders.windowWeekly')
     expect(bars[1].props('utilization')).toBe(27)
-    expect(bars[1].props('color')).toBe('emerald')
+    expect(bars[1].props('color')).toBe('primary')
     expect(bars[1].props('resetsAt')).toBe('2026-08-22T00:00:00+08:00')
   })
 

@@ -1,3 +1,5 @@
+// Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md.
+
 import { describe, expect, it } from 'vitest'
 import {
   GROK_CC_SWITCH_MODEL,
@@ -22,7 +24,7 @@ describe('ccswitchImport utils', () => {
 
   const baseInput = {
     baseUrl: 'https://api.example.com',
-    providerName: 'Sub2API',
+    providerName: 'Oh My Sub2API',
     apiKey: 'sk-test',
     usageScript: 'return true'
   }

@@ -1,3 +1,5 @@
+// Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md.
+
 import { describe, expect, it } from "vitest";
 
 import {
@@ -99,7 +101,7 @@ describe("admin settings auth source defaults helpers", () => {
 
   it("appends auth source defaults back onto update payload", () => {
     const payload: UpdateSettingsRequest = {
-      site_name: "Sub2API",
+      site_name: "Oh My Sub2API",
     };
 
     appendAuthSourceDefaultsToUpdateRequest(payload, {
@@ -162,7 +164,7 @@ describe("admin settings auth source defaults helpers", () => {
     });
 
     expect(payload).toMatchObject({
-      site_name: "Sub2API",
+      site_name: "Oh My Sub2API",
       auth_source_default_email_balance: 1.25,
       auth_source_default_email_concurrency: 2,
       auth_source_default_email_subscriptions: [

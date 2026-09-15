@@ -1,3 +1,5 @@
+<!-- Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md. -->
+
 <template>
   <form class="space-y-3" @submit.prevent="handleSubmit">
     <input
@@ -61,7 +63,7 @@
         }}
       </button>
     </div>
-    <p v-if="emailVerifyEnabled && sendCodeSuccess" class="text-sm text-green-600 dark:text-green-400">
+    <p v-if="emailVerifyEnabled && sendCodeSuccess" class="text-sm text-primary-600 dark:text-primary-400">
       {{ t('auth.codeSentSuccess') }}
     </p>
     <p v-else-if="emailVerifyEnabled" class="text-xs text-gray-500 dark:text-dark-400">

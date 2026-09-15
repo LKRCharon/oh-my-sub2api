@@ -1,3 +1,5 @@
+<!-- Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md. -->
+
 <template>
   <BaseDialog
     :show="show"
@@ -15,7 +17,7 @@
             :class="[
               'flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br',
               isOpenAILike
-                ? 'from-green-500 to-green-600'
+                ? 'from-primary-500 to-primary-600'
                 : isGemini
                   ? 'from-blue-500 to-blue-600'
                   : isAntigravity

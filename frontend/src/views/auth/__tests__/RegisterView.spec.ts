@@ -1,3 +1,5 @@
+// Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md.
+
 import { flushPromises, mount } from '@vue/test-utils'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import RegisterView from '@/views/auth/RegisterView.vue'
@@ -18,7 +20,7 @@ const publicSettings = {
   affiliate_enabled: true,
   turnstile_enabled: true,
   turnstile_site_key: 'site-key',
-  site_name: 'Sub2API',
+  site_name: 'Oh My Sub2API',
   registration_email_suffix_whitelist: [],
   linuxdo_oauth_enabled: false,
   wechat_oauth_enabled: false,

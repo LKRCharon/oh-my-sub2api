@@ -1,3 +1,5 @@
+# Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md.
+
 # =============================================================================
 # Sub2API Dockerfile for GoReleaser
 # =============================================================================
@@ -12,9 +14,10 @@ FROM ${POSTGRES_IMAGE} AS pg-client
 
 FROM ${ALPINE_IMAGE}
 
-LABEL maintainer="Wei-Shaw <github.com/Wei-Shaw>"
-LABEL description="Sub2API - AI API Gateway Platform"
-LABEL org.opencontainers.image.source="https://github.com/Wei-Shaw/sub2api"
+LABEL maintainer="Oh My Sub2API contributors <github.com/LKRCharon/oh-my-sub2api>"
+LABEL org.opencontainers.image.licenses="LGPL-3.0-or-later"
+LABEL description="Oh My Sub2API - AI API Gateway Platform"
+LABEL org.opencontainers.image.source="https://github.com/LKRCharon/oh-my-sub2api"
 
 # Install runtime dependencies
 RUN apk add --no-cache \
@@ -41,6 +44,7 @@ RUN addgroup -g 1000 sub2api && \
     adduser -u 1000 -G sub2api -s /bin/sh -D sub2api
 
 WORKDIR /app
+COPY LICENSE COPYING NOTICE /usr/share/licenses/oh-my-sub2api/
 
 # Copy the pre-built binary and runtime fallback resources from GoReleaser
 COPY sub2api /app/sub2api

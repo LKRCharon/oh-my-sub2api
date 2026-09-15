@@ -1,3 +1,5 @@
+<!-- Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md. -->
+
 <template>
   <AppLayout>
     <TablePageLayout>
@@ -365,10 +367,10 @@
                   !row.group?.weekly_limit_usd &&
                   !row.group?.monthly_limit_usd
                 "
-                class="flex items-center gap-2 rounded-lg bg-gradient-to-r from-emerald-50 to-teal-50 px-3 py-2 dark:from-emerald-900/20 dark:to-teal-900/20"
+                class="flex items-center gap-2 rounded-lg bg-gradient-to-r from-primary-50 to-primary-50 px-3 py-2 dark:from-primary-900/20 dark:to-primary-900/20"
               >
-                <span class="text-lg text-emerald-600 dark:text-emerald-400">∞</span>
-                <span class="text-xs font-medium text-emerald-700 dark:text-emerald-300">
+                <span class="text-lg text-primary-600 dark:text-primary-400">∞</span>
+                <span class="text-xs font-medium text-primary-700 dark:text-primary-300">
                   {{ t('admin.subscriptions.unlimited') }}
                 </span>
               </div>
@@ -446,7 +448,7 @@
               <button
                 v-if="row.status === 'revoked'"
                 @click="handleRestore(row)"
-                class="flex flex-col items-center gap-0.5 rounded-lg p-1.5 text-gray-500 transition-colors hover:bg-green-50 hover:text-green-600 dark:hover:bg-green-900/20 dark:hover:text-green-400"
+                class="flex flex-col items-center gap-0.5 rounded-lg p-1.5 text-gray-500 transition-colors hover:bg-primary-50 hover:text-primary-600 dark:hover:bg-primary-900/20 dark:hover:text-primary-400"
               >
                 <Icon name="refresh" size="sm" />
                 <span class="text-xs">{{ t('admin.subscriptions.restore') }}</span>
@@ -1534,7 +1536,7 @@ const getProgressClass = (used: number | null | undefined, limit: number | null)
   const percentage = (usedValue / limit) * 100
   if (percentage >= 90) return 'bg-red-500'
   if (percentage >= 70) return 'bg-orange-500'
-  return 'bg-green-500'
+  return 'bg-primary-500'
 }
 
 const formatResetDuration = (parts: RemainingDurationParts): string => {

@@ -1,3 +1,5 @@
+// Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md.
+
 package service
 
 import (
@@ -1689,7 +1691,8 @@ func filterCodexInputWithOptions(input []any, opts codexInputFilterOptions) []an
 
 		if isCodexToolCallItemType(typ) {
 			callID, ok := m["call_id"].(string)
-			if !ok || strings.TrimSpace(callID) == "" {
+			if (!ok || strings.TrimSpace(callID) == "") &&
+				!isNamedStandaloneFunctionOutput(typ, callID, firstNonEmptyString(m["name"])) {
 				if id, ok := m["id"].(string); ok && strings.TrimSpace(id) != "" {
 					callID = id
 					ensureCopy()

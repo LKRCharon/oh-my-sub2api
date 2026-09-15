@@ -1,3 +1,5 @@
+<!-- Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md. -->
+
 <template>
     <div class="space-y-6">
       <!-- S3 Storage Config -->
@@ -343,7 +345,7 @@
             </div>
 
             <!-- Free tier note -->
-            <div class="rounded-lg bg-green-50 p-3 text-xs text-green-700 dark:bg-green-900/20 dark:text-green-300">
+            <div class="rounded-lg bg-primary-50 p-3 text-xs text-primary-700 dark:bg-primary-900/20 dark:text-primary-300">
               {{ t('admin.backup.r2Guide.freeTier') }}
             </div>
 
@@ -825,7 +827,7 @@ async function removeBackup(id: string) {
 function statusClass(status: string): string {
   switch (status) {
     case 'completed':
-      return 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300'
+      return 'bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300'
     case 'running':
       return 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300'
     case 'failed':

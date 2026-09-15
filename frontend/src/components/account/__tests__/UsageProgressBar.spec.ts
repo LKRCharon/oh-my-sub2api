@@ -1,3 +1,5 @@
+// Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md.
+
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { mount } from '@vue/test-utils'
 import UsageProgressBar from '../UsageProgressBar.vue'
@@ -44,7 +46,7 @@ describe('UsageProgressBar', () => {
         utilization: 12,
         resetsAt: '2026-03-17T02:30:00Z',
         showNowWhenIdle: true,
-        color: 'emerald'
+        color: 'primary'
       }
     })
 
@@ -153,8 +155,8 @@ describe('UsageProgressBar', () => {
         props: { label: '5h', utilization, color: 'indigo' }
       })
 
-    // 条形配色：74 绿 / 75 与 89 黄 / 90 红
-    expect(mountAt(74).get('.h-1\\.5 > div').classes()).toContain('bg-green-500')
+    // 条形配色：74 Apple Blue / 75 与 89 黄 / 90 红
+    expect(mountAt(74).get('.h-1\\.5 > div').classes()).toContain('bg-primary-500')
     expect(mountAt(75).get('.h-1\\.5 > div').classes()).toContain('bg-amber-500')
     expect(mountAt(89).get('.h-1\\.5 > div').classes()).toContain('bg-amber-500')
     expect(mountAt(90).get('.h-1\\.5 > div').classes()).toContain('bg-red-500')

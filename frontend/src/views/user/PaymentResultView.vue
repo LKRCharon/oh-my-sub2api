@@ -1,3 +1,5 @@
+<!-- Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md. -->
+
 <template>
   <div class="flex min-h-screen items-center justify-center bg-gray-50 px-4 dark:bg-dark-900">
     <div class="w-full max-w-md space-y-6">
@@ -9,8 +11,8 @@
         <!-- Status Icon -->
         <div class="text-center">
           <div v-if="isSuccess"
-            class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-green-100 dark:bg-green-900/30">
-            <svg class="h-10 w-10 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-primary-100 dark:bg-primary-900/30">
+            <svg class="h-10 w-10 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"
               stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
             </svg>

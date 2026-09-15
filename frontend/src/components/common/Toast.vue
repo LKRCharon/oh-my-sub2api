@@ -1,3 +1,5 @@
+<!-- Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md. -->
+
 <template>
   <Teleport to="body">
     <div
@@ -101,7 +103,7 @@ const getToastIconName = (type: string): 'checkCircle' | 'xCircle' | 'exclamatio
 
 const getIconColor = (type: string): string => {
   const colors: Record<string, string> = {
-    success: 'text-green-500',
+    success: 'text-primary-500',
     error: 'text-red-500',
     warning: 'text-yellow-500',
     info: 'text-blue-500'
@@ -111,7 +113,7 @@ const getIconColor = (type: string): string => {
 
 const getBorderColor = (type: string): string => {
   const colors: Record<string, string> = {
-    success: 'border-green-500',
+    success: 'border-primary-500',
     error: 'border-red-500',
     warning: 'border-yellow-500',
     info: 'border-blue-500'
@@ -121,7 +123,7 @@ const getBorderColor = (type: string): string => {
 
 const getProgressBarColor = (type: string): string => {
   const colors: Record<string, string> = {
-    success: 'bg-green-500',
+    success: 'bg-primary-500',
     error: 'bg-red-500',
     warning: 'bg-yellow-500',
     info: 'bg-blue-500'

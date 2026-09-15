@@ -1,3 +1,5 @@
+<!-- Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md. -->
+
 <template>
   <BaseDialog :show="show" :title="t('admin.usage.cleanup.title')" width="wide" @close="handleClose">
     <div class="space-y-4">
@@ -207,7 +209,7 @@ const statusClass = (status: string) => {
   const map: Record<string, string> = {
     pending: 'bg-amber-100 text-amber-700 dark:bg-amber-500/20 dark:text-amber-200',
     running: 'bg-blue-100 text-blue-700 dark:bg-blue-500/20 dark:text-blue-200',
-    succeeded: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-500/20 dark:text-emerald-200',
+    succeeded: 'bg-primary-100 text-primary-700 dark:bg-primary-500/20 dark:text-primary-200',
     failed: 'bg-rose-100 text-rose-700 dark:bg-rose-500/20 dark:text-rose-200',
     canceled: 'bg-gray-200 text-gray-600 dark:bg-dark-600 dark:text-gray-300'
   }

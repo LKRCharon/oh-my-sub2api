@@ -1,4 +1,5 @@
 #!/bin/sh
+# Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md.
 set -eu
 
 repo_root=$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)
@@ -28,7 +29,12 @@ test -s backend/resources/model-pricing/model_prices_and_context_window.json || 
 
 assert_line Dockerfile.goreleaser 'COPY --chown=sub2api:sub2api backend/resources /app/resources'
 assert_line deploy/Dockerfile 'COPY --from=backend-builder --chown=sub2api:sub2api /app/backend/resources /app/resources'
-assert_count .goreleaser.yaml '      - backend/resources' 4
-assert_count .goreleaser.simple.yaml '      - backend/resources' 1
+assert_count .goreleaser.yaml '      - backend/resources' 2
+assert_count .goreleaser.yaml '      - LICENSE' 3
+assert_count .goreleaser.yaml '      - COPYING' 3
+assert_count .goreleaser.yaml '      - NOTICE' 3
+for dockerfile in Dockerfile Dockerfile.goreleaser deploy/Dockerfile; do
+  assert_line "$dockerfile" 'COPY LICENSE COPYING NOTICE /usr/share/licenses/oh-my-sub2api/'
+done
 
 printf 'docker runtime resources test passed\n'

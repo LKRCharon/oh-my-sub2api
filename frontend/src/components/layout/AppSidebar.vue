@@ -1,10 +1,12 @@
+<!-- Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md. -->
+
 <template>
   <aside
     class="sidebar"
     :class="[
-      sidebarCollapsed ? 'w-[72px]' : 'w-64',
       { '-translate-x-full lg:translate-x-0': !mobileOpen }
     ]"
+    :style="{ width: sidebarCollapsed ? '72px' : sidebarWidth + 'px' }"
   >
     <!-- Logo/Brand -->
     <div class="sidebar-header" :class="{ 'sidebar-header-collapsed': sidebarCollapsed }">
@@ -175,6 +177,14 @@
         <span class="sidebar-label" :class="{ 'sidebar-label-collapsed': sidebarCollapsed }" :aria-hidden="sidebarCollapsed ? 'true' : 'false'">{{ t('nav.collapse') }}</span>
       </button>
     </div>
+
+    <!-- Resize Handle -->
+    <SidebarResizeHandle
+      v-if="!sidebarCollapsed"
+      :width="sidebarWidth"
+      :label="t('nav.resizeSidebar')"
+      @resize="appStore.setSidebarWidth"
+    />
   </aside>
 
   <!-- Mobile Overlay -->
@@ -193,6 +203,7 @@ import { useRoute, useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import { useAdminSettingsStore, useAppStore, useAuthStore, useOnboardingStore } from '@/stores'
 import VersionBadge from '@/components/common/VersionBadge.vue'
+import SidebarResizeHandle from '@/components/layout/SidebarResizeHandle.vue'
 import Icon from '@/components/icons/Icon.vue'
 import { sanitizeSvg } from '@/utils/sanitize'
 import { sanitizeUrl } from '@/utils/url'
@@ -247,6 +258,7 @@ const adminSettingsStore = useAdminSettingsStore()
 const { canUseBatchImage, refreshBatchImageAccess } = useBatchImageAccess()
 
 const sidebarCollapsed = computed(() => appStore.sidebarCollapsed)
+const sidebarWidth = computed(() => appStore.sidebarWidth)
 const mobileOpen = computed(() => appStore.mobileOpen)
 const isAdmin = computed(() => authStore.isAdmin)
 const sidebarNavRef = ref<HTMLElement | null>(null)
@@ -934,6 +946,7 @@ function handleGroupClick(item: NavItem) {
 
 // Initialize theme
 const savedTheme = localStorage.getItem('theme')
+
 if (
   savedTheme === 'dark' ||
   (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)
@@ -1102,4 +1115,5 @@ onBeforeUnmount(() => {
   width: 1.25rem;
   height: 1.25rem;
 }
+
 </style>

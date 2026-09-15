@@ -1,3 +1,5 @@
+// Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md.
+
 import { beforeAll, beforeEach, describe, expect, it, vi } from 'vitest'
 
 type NavigationGuard = (
@@ -19,7 +21,7 @@ const authStore = vi.hoisted(() => ({
 }))
 
 const appStore = vi.hoisted(() => ({
-  siteName: 'Sub2API',
+  siteName: 'Oh My Sub2API',
   backendModeEnabled: false,
   publicSettingsLoaded: false,
   cachedPublicSettings: null as null | {

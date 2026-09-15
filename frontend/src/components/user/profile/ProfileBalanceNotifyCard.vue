@@ -1,3 +1,5 @@
+<!-- Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md. -->
+
 <template>
   <div class="card">
     <div class="border-b border-gray-100 px-6 py-4 dark:border-dark-700">
@@ -90,7 +92,7 @@
                     <span class="text-xs text-yellow-500">{{ t('profile.balanceNotify.unverified') }}</span>
                   </template>
                 </template>
-                <span v-else class="text-xs text-green-500">{{ t('profile.balanceNotify.verified') }}</span>
+                <span v-else class="text-xs text-primary-500">{{ t('profile.balanceNotify.verified') }}</span>
                 <button @click="handleRemoveEmail(entry.email)" class="text-red-500 hover:text-red-700 text-xs">
                   {{ t('profile.balanceNotify.removeEmail') }}
                 </button>

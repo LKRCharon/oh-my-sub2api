@@ -1,3 +1,5 @@
+<!-- Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md. -->
+
 <template>
   <div class="flex min-w-0 flex-1 items-start justify-between gap-3">
     <!-- Left: name + description -->
@@ -129,7 +131,7 @@ const ratePillClass = computed(() => {
     case 'anthropic':
       return 'bg-amber-50 text-amber-700 dark:bg-amber-900/20 dark:text-amber-400'
     case 'openai':
-      return 'bg-green-50 text-green-700 dark:bg-green-900/20 dark:text-green-400'
+      return 'bg-primary-50 text-primary-700 dark:bg-primary-900/20 dark:text-primary-400'
     case 'gemini':
       return 'bg-sky-50 text-sky-700 dark:bg-sky-900/20 dark:text-sky-400'
     default: // antigravity and others

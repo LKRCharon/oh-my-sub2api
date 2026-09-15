@@ -1,3 +1,5 @@
+<!-- Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md. -->
+
 <template>
   <div
     class="rounded-lg border border-blue-200 bg-blue-50 p-4 dark:border-blue-700 dark:bg-blue-900/30"
@@ -762,7 +764,7 @@
                         v-else
                         name="check"
                         size="sm"
-                        class="text-green-500"
+                        class="text-primary-500"
                         :stroke-width="2"
                       />
                     </button>

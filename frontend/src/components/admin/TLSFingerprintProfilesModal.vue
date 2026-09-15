@@ -1,3 +1,5 @@
+<!-- Modified by Oh My Sub2API contributors on 2026-09-15; see CHANGES.md. -->
+
 <template>
   <BaseDialog
     :show="show"
@@ -70,7 +72,7 @@
                 <Icon
                   :name="profile.enable_grease ? 'check' : 'lock'"
                   size="sm"
-                  :class="profile.enable_grease ? 'text-green-500' : 'text-gray-400'"
+                  :class="profile.enable_grease ? 'text-primary-500' : 'text-gray-400'"
                 />
               </td>
               <td class="px-3 py-2">
