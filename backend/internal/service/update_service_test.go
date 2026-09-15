@@ -6,6 +6,7 @@ package service
 
 import (
 	"context"
+	"encoding/json"
 	"errors"
 	"testing"
 	"time"
@@ -49,6 +50,31 @@ func TestUpdateServiceDetectsForkRevision(t *testing.T) {
 	require.True(t, info.HasUpdate)
 	require.Equal(t, "0.2.5-ohmy.10", info.LatestVersion)
 	require.Equal(t, "LKRCharon/oh-my-sub2api", client.requestedRepo)
+}
+
+func TestUpdateServiceReplacesCacheFromOtherReleaseChannels(t *testing.T) {
+	for _, repo := range []string{"", "Wei-Shaw/sub2api"} {
+		t.Run("cached repository "+repo, func(t *testing.T) {
+			data, err := json.Marshal(map[string]any{
+				"repo": repo, "latest": "99.0.0", "timestamp": time.Now().Unix(),
+			})
+			require.NoError(t, err)
+			client := &updateServiceGitHubClientStub{release: &GitHubRelease{TagName: "v0.2.5-ohmy.2"}}
+			svc := NewUpdateService(&updateServiceCacheStub{data: string(data)}, client, "0.2.5-ohmy.1", "release")
+			info, err := svc.CheckUpdate(context.Background(), false)
+			require.NoError(t, err)
+			require.Equal(t, "0.2.5-ohmy.2", info.LatestVersion)
+			require.False(t, info.Cached)
+			require.Equal(t, githubRepo, client.requestedRepo)
+
+			client.requestedRepo = ""
+			info, err = svc.CheckUpdate(context.Background(), false)
+			require.NoError(t, err)
+			require.Equal(t, "0.2.5-ohmy.2", info.LatestVersion)
+			require.True(t, info.Cached)
+			require.Empty(t, client.requestedRepo)
+		})
+	}
 }
 
 func TestUpdateServiceRollbackSortsForkRevisions(t *testing.T) {
