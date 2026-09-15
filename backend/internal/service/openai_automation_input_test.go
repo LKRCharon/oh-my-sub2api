@@ -48,11 +48,15 @@ Read the local queue. Record the source as mail:<message-hash>; preserve A && B.
 
 			require.False(t, sanitizeOpenAIResponsesOrphanToolOutputs(request, input, false))
 			require.Equal(t, input, request["input"])
-			got := request["input"].([]any)
-			require.Equal(t, heartbeat, got[len(got)-1].(map[string]any)["output"])
-			require.NotContains(t, got[len(got)-1].(map[string]any), "call_id")
-			require.Equal(t, "automation_update", got[len(got)-1].(map[string]any)["name"])
-			require.Equal(t, "codex_app", got[len(got)-1].(map[string]any)["namespace"])
+			got, ok := request["input"].([]any)
+			require.True(t, ok)
+			require.NotEmpty(t, got)
+			lastItem, ok := got[len(got)-1].(map[string]any)
+			require.True(t, ok)
+			require.Equal(t, heartbeat, lastItem["output"])
+			require.NotContains(t, lastItem, "call_id")
+			require.Equal(t, "automation_update", lastItem["name"])
+			require.Equal(t, "codex_app", lastItem["namespace"])
 		})
 	}
 }
