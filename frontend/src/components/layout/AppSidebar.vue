@@ -2,7 +2,7 @@
 
 <template>
   <aside
-    class="sidebar"
+    class="sidebar max-w-[calc(100vw-2rem)] lg:max-w-none"
     :class="[
       { '-translate-x-full lg:translate-x-0': !mobileOpen }
     ]"

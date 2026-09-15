@@ -28,6 +28,9 @@ let cleanup: (() => void) | undefined
 function startResize(event: PointerEvent) {
   if (event.button !== 0) return
   cleanup?.()
+  // pointerdown.prevent suppresses the browser's default focus behavior.
+  const handle = event.currentTarget as HTMLElement
+  handle.focus()
   const startX = event.clientX
   const startWidth = props.width
   const pointerId = event.pointerId

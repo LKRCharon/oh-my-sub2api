@@ -11,7 +11,10 @@ function pointer(target: EventTarget, type: string, clientX: number, pointerId =
 }
 
 function createHandle() {
-  wrapper = mount(SidebarResizeHandle, { props: { width: 256, label: 'Resize sidebar' } })
+  wrapper = mount(SidebarResizeHandle, {
+    attachTo: document.body,
+    props: { width: 256, label: 'Resize sidebar' }
+  })
   return wrapper
 }
 
@@ -26,6 +29,7 @@ describe('SidebarResizeHandle', () => {
   it('drags from the current width and clamps both ends', () => {
     const handle = createHandle()
     pointer(handle.element, 'pointerdown', 256)
+    expect(document.activeElement).toBe(handle.element)
     pointer(window, 'pointermove', 316)
     pointer(window, 'pointermove', 900)
     pointer(window, 'pointermove', -100)
